@@ -1,0 +1,5 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Include file="core\oUF\oUF.xml"/>
+	<Script file="plugins\classicons.lua" />
+	<Script file="layout.lua"/>
+</Ui>
