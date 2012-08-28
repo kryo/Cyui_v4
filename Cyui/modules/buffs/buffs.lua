@@ -7,13 +7,13 @@ local debuffs = TukuiAurasPlayerDebuffs
 local buffadjust = 3
 
 buffs:ClearAllPoints()
-buffs:SetPoint("TOPRIGHT", UIParent, -(C.ufsize.minimapsize+10), -5)
+buffs:SetPoint("TOPRIGHT", UIParent, -(C.ufsize.minimapsize+15), -7)
 buffs:SetAttribute("xOffset", -35)
 buffs:SetAttribute("wrapAfter", 15+buffadjust)
 buffs:SetAttribute("wrapYOffset", -45)
 
 debuffs:ClearAllPoints()
-debuffs:SetPoint("TOPRIGHT", UIParent, -(C.ufsize.minimapsize+10), -(C.ufsize.minimapsize-25))
+debuffs:SetPoint("TOPRIGHT", UIParent, -(C.ufsize.minimapsize+15), -(C.ufsize.minimapsize))
 debuffs:SetAttribute("xOffset", -35)
 debuffs:SetAttribute("wrapAfter", 15+buffadjust)
 debuffs:SetAttribute("wrapYOffset", -45)
