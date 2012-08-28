@@ -4,4 +4,4 @@ This is an edited version of Tukui. Please visit [www.tukui.org](http://www.tuku
 
 Cyui requires original Tukui to run. Just download both Cyui and Tukui, enable both on the addon section, and log your character.
 
-![placeholder img](http://s3.photobucket.com/albums/y89/kryo85/cyui/?action=view&current=WoWScrnShot_082812_194558.jpg)
+![placeholder img](http://i3.photobucket.com/albums/y89/kryo85/cyui/WoWScrnShot_082812_194558.jpg)
