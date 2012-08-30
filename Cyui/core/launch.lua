@@ -126,7 +126,7 @@ T.ChatSetup = function()
 	ToggleChatColorNamesByClassGroup(true, "CHANNEL5")
 end
 
-local function CyCVars()
+--[[ local function CyCVars()
 	SetCVar("lootUnderMouse", 1)
 	SetCVar("autoLootDefault", 1)
 	SetCVar("nameplateShowEnemies", 1)
@@ -145,7 +145,7 @@ local function CyCVars()
 
 	--SetCVar("taintlog", 1)
 end
-
+ ]]
 StaticPopupDialogs["DISABLE_RAID"] = {
 	text = L.popup_2raidactive,
 	button1 = "DPS",
@@ -182,13 +182,13 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		print(L.logon_welcome3)
 	end
 	
-	CyCVars()
+	--CyCVars()
 	
-	if (IsAddOnLoaded("Tukui_Raid") or IsAddOnLoaded("Tukui_Raid_Healing")) then
+	if (IsAddOnLoaded("Tukui_raid") or IsAddOnLoaded("Tukui_healing")) then
 		StaticPopup_Show("DISABLE_TUKUIRAIDFRAMES")
 	end
 	
-	if (IsAddOnLoaded("CyUI_Raid") and IsAddOnLoaded("CyUI_Raid_Heal")) then
+	if (IsAddOnLoaded("Cyui_raid") and IsAddOnLoaded("Cyui_heal")) then
 		StaticPopup_Show("DISABLE_RAID")
 	end
 end)
