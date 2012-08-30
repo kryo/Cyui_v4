@@ -9,23 +9,22 @@ showParty = true
 showRaid = true
 showPlayer = C.unitframes.showplayerinparty
 xOffset = T.Scale(0)
-yOffset = T.Scale(7)
-point = "BOTTOM"
-columnSpacing = T.Scale(5)
-columnAnchorPoint = "TOPLEFT"
+yOffset = T.Scale(-7)
+point = "TOP"
+columnSpacing = T.Scale(0)
+columnAnchorPoint = "TOP"
 bgcolor = C.general.backgroundcolor
 normTex = C.media.normTex
 blank = C.media.blank
 uffont = C.media.uffont
 font = C.media.font
 fs = 11
-solo = true -- coding only
+solo = false -- coding only
 	
 T.RaidFrameAttributes = function()
 	return
 	"TukuiRaid",
 	nil,
-	--"custom [petbattle] hide;show",
 	"solo,party,raid",
 	"oUF-initialConfigFunction", [[
 		local header = self:GetParent()
@@ -37,7 +36,7 @@ T.RaidFrameAttributes = function()
 	"showParty", showParty,
 	"showRaid", showRaid,
 	"showPlayer", showPlayer,
-	--"showSolo", solo,
+	"showSolo", solo,
 	"xoffset", xOffset,
 	"yOffset", yOffset,
 	"point", point,
@@ -45,19 +44,20 @@ T.RaidFrameAttributes = function()
 	"groupingOrder", "1,2,3,4,5,6,7,8",
 	"groupBy", "GROUP",
 	"maxColumns", 8,
-	"unitsPerColumn", 5,
+	--"unitsPerColumn", 5
 	"columnSpacing", columnSpacing,
 	"columnAnchorPoint", columnAnchorPoint
 end
 	
 T.PostUpdateRaidUnit = function(self)
-	-- panel
 	self.panel:Kill()
 	self.Health.value:Kill()
 	self.Power:Kill()
+	
 	if C["unitframes"].raidunitdebuffwatch == true then
 		self.RaidDebuffs:Kill()
 		self.RaidDebuffs.icon:Kill()
+		self.RaidDebuffs.count:Kill()
 	end
 	
 	local panel = CreateFrame("Frame", nil, self)
@@ -89,7 +89,7 @@ T.PostUpdateRaidUnit = function(self)
 	self.Health.frequentUpdates = true
 	
 	if C.unitframes.unicolor == true then
-		self.Health.colorDisconnected = false
+		self.Health.colorDisconnected = true
 		self.Health.colorClass = false
 		self.Health:SetStatusBarColor(.3,.3,.3,1)
 		self.Health.bg:SetVertexColor(unpack(bgcolor))
@@ -103,32 +103,36 @@ T.PostUpdateRaidUnit = function(self)
 	self.Name:ClearAllPoints()
 	self.Name:SetParent(self.Health)
 	self.Name:SetPoint("LEFT", self.Health, "LEFT", 10, 0)
-	self.Name:SetShadowOffset( 1.25, -1.25 )
-	self.Name:SetFont(font, fs)
-	self:Tag(name, '[Tukui:getnamecolor][Tukui:nameshort] [Tukui:dead][Tukui:afk]')
+	self.Name:SetFont(uffont, fs, "THINOUTLINE")
 	
+	-- leader icon
 	local leader = self.Health:CreateTexture(nil, "OVERLAY")
 	leader:Height(12*T.raidscale)
 	leader:Width(12*T.raidscale)
 	leader:SetPoint("TOPLEFT", 0, 6)
 	self.Leader = leader
 	
+	-- ml icon
 	local MasterLooter = self.Health:CreateTexture(nil, "OVERLAY")
-	MasterLooter:SetHeight(12*T.raidscale)
-	MasterLooter:SetWidth(12*T.raidscale)
+	MasterLooter:SetHeight(10*T.raidscale)
+	MasterLooter:SetWidth(10*T.raidscale)
+	MasterLooter:SetPoint("LEFT", leader, "LEFT", 12, 0)
 	self.MasterLooter = MasterLooter
 	
+	-- lfd icon
 	local LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
     LFDRole:Height(6*T.raidscale)
     LFDRole:Width(6*T.raidscale)
-	LFDRole:Point("LEFT", self.Health, "LEFT", 3, 0)
+	LFDRole:Point("LEFT", self.Health, "LEFT", 2, 0)
 	LFDRole:SetTexture("Interface\\AddOns\\Tukui\\medias\\textures\\lfdicons.blp")
 	self.LFDRole = LFDRole
 	
+	-- readycheck icon
 	self.ReadyCheck:Height(12*T.raidscale)
 	self.ReadyCheck:Width(12*T.raidscale)
-	self.ReadyCheck:SetPoint("CENTER", health, "CENTER", 0, 5)
+	self.ReadyCheck:SetPoint("CENTER", self.Health, "CENTER", 0, 5)
 	
+	-- marker icon
 	if C["unitframes"].showsymbols == true then
 		self.RaidIcon:Height(18*T.raidscale)
 		self.RaidIcon:Width(18*T.raidscale)
@@ -143,15 +147,6 @@ T.PostUpdateRaidUnit = function(self)
 		self:RegisterEvent('UNIT_THREAT_LIST_UPDATE', T.UpdateThreat)
 		self:RegisterEvent('UNIT_THREAT_SITUATION_UPDATE', T.UpdateThreat)
 	end
-	
-	if C.unitframes.showsmooth == true then
-		self.Health.Smooth = true
-	end
-	
-	if C.unitframes.showrange == true then
-		local range = {insideAlpha = 1, outsideAlpha = C.unitframes.raidalphaoor}
-		self.Range = range
-	end
 end
 
 local RaidPosition = CreateFrame("Frame")
@@ -160,7 +155,7 @@ RaidPosition:SetScript("OnEvent", function(self, event)
 	local raid = G.UnitFrames.RaidUnits
 	
 	raid:ClearAllPoints()
-	raid:SetPoint("LEFT", UIParent, "LEFT", 15, 150)
+	raid:SetPoint("LEFT", UIParent, "LEFT", 15, 0)
 end)
 
 local MaxGroup = CreateFrame("Frame")
