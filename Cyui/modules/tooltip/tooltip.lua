@@ -110,4 +110,3 @@ GameTooltipStatusBar:SetScript("OnValueChanged", function(self, value)
 		end
 	end
 end)
-

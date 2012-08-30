@@ -14,7 +14,7 @@ C.ufsize = {
 	smallhealthheight = 15,
 	smallpowerheight = 4,
 	smallunitframewidth = 90,
-	minimapsize = 125,
+	--minimapsize = 125,
 }
 
 C.unitframes = {

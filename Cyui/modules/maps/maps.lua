@@ -1,29 +1,27 @@
 local T, C, L, G = unpack(Tukui)
 
-local mm = C.ufsize.minimapsize
+--local mm = C.ufsize.minimapsize
 local font = C.media.font
 local ps = T.Scale(C.datatext.panelsize)
 
 -- minimap
 G.Maps.Minimap:ClearAllPoints()
-G.Maps.Minimap:Size(mm)
+--G.Maps.Minimap:Size(mm)
 G.Maps.Minimap:Point("TOPRIGHT", UIParent, "TOPRIGHT", -8, -8)
-G.Maps.Minimap:CreateShadow("Default")
 
 -- coord and zone
 TukuiMinimapZone:ClearAllPoints()
 TukuiMinimapZone:Size(TukuiMinimap:GetWidth(), ps)
 TukuiMinimapZone:SetTemplate("Default")
-TukuiMinimapZone:CreateShadow("Default")
 TukuiMinimapZone:Point("TOP", Minimap, "BOTTOM", 0, -5)
 TukuiMinimapZone:SetAlpha(1)
+TukuiMinimapZone:SetFrameLevel(G.Maps.Minimap:GetFrameLevel())
 
 TukuiMinimapZoneText:SetFont(font, 12)
 TukuiMinimapZoneText:SetAlpha(1)
 
 TukuiMinimapCoord:ClearAllPoints()
 TukuiMinimapCoord:SetTemplate("Default")
-TukuiMinimapCoord:CreateShadow("Default")
 TukuiMinimapCoord:Size(32, ps)
 TukuiMinimapCoord:Point("BOTTOMLEFT", Minimap, "BOTTOMLEFT", 2, 2)
 TukuiMinimapCoord:SetParent(Minimap)
