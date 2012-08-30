@@ -2,11 +2,11 @@ local T, C, L, G = unpack(Tukui)
 
 -- switch to dps layout
 SLASH_DPSENABLE1 = "/cydps"
-SlashCmdList["DPSENABLE"] = function() if IsAddOnLoaded("CyUI_Raid_Heal") then DisableAddOn("CyUI_Raid_Heal") EnableAddOn("CyUI_Raid") else EnableAddOn("CyUI_Raid") end ReloadUI() end
+SlashCmdList["DPSENABLE"] = function() if IsAddOnLoaded("Cyui_heal") then DisableAddOn("Cyui_heal") EnableAddOn("Cyui_raid") else EnableAddOn("Cyui_raid") end ReloadUI() end
 
 -- switch to heal layout
 SLASH_HEALENABLE1 = "/cyheal"
-SlashCmdList["HEALENABLE"] = function() if IsAddOnLoaded("CyUI_Raid") then DisableAddOn("CyUI_Raid") EnableAddOn("CyUI_Raid_Heal") else EnableAddOn("CyUI_Raid_Heal") end ReloadUI() end
+SlashCmdList["HEALENABLE"] = function() if IsAddOnLoaded("Cyui_raid") then DisableAddOn("Cyui_raid") EnableAddOn("Cyui_heal") else EnableAddOn("Cyui_heal") end ReloadUI() end
 
 -- leave group
 SLASH_LEAVEGROUP1 = "/lg"
