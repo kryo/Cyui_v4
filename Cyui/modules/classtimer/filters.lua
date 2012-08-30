@@ -7,10 +7,12 @@ local CreateSpellEntry = function(id, castByAnyone, color, unitType, castSpellId
 end
 
 TRINKET_FILTER = {
+	-- Misc
 	CreateSpellEntry(2825, true), CreateSpellEntry(32182, true), CreateSpellEntry(80353, true), CreateSpellEntry(90355, true),	-- Bloodlust/Heroism/Timewarp/Ancient Hysteria
 	CreateSpellEntry(57933, true),	-- Tricks of Trade (15% dmg buff)
 	CreateSpellEntry(73422),	-- Chaos Bane
 	CreateSpellEntry(71905),	-- Soul Fragment
+	CreateSpellEntry( 80627 ), -- Stolen Power
 	
 	-- Quartermasters
 	CreateSpellEntry(91828),	-- Impatience of Youth (Thrill of Victory)

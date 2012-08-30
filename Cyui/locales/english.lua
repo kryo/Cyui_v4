@@ -13,6 +13,7 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	-- general
 	TukuiConfigUILocalization.generalbackgroundcolor = "Health background color"
 	TukuiConfigUILocalization.generalwelcomemsg = "Enable welcome message on login"
+	--TukuiConfigUILocalization.generalcvars = "Remove custom interface options"
 	
 	-- unitframe sizes
 	TukuiConfigUILocalization.ufsize = "Unitframe size"
