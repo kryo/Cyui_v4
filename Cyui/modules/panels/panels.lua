@@ -1,10 +1,6 @@
-local T, C, L = unpack(Tukui)
+local T, C, L, G = unpack(Tukui)
 
 local ps = T.Scale(C.datatext.panelsize)
-local width = T.Scale(C.chat.width)
-local height = T.Scale(C.chat.height)
-local adjust = 0
-if C.chat.background == true then adjust = 10 end
 
 if C.unitframes.backgroundpanels ~= true then
 	TukuiBar1:StripTextures()
@@ -148,25 +144,35 @@ end
 
 -- chat background
 if C.chat.background then
+	local width = T.Scale(C.chat.width)
+	local height = T.Scale(C.chat.height)
+	local adjust = 10
+	local chatleftbg = G.Panels.LeftChatBackground
+	local chatrightbg = G.Panels.RightChatBackground
+	local tabsbgleft = G.Panels.LeftChatTabsBackground
+	local tabsbgright = G.Panels.RightChatTabsBackground
+	
 	-- kill new lines
 	TukuiLineToABLeftAlt:Kill()
 	TukuiLineToABRightAlt:Kill()
-	
-	chatleftbg = TukuiChatBackgroundLeft
-	chatrightbg = TukuiChatBackgroundRight
-	tabsbgleft = TukuiTabsLeftBackground
-	tabsbgright = TukuiTabsRightBackground
 	
 	-- left chat background
 	chatleftbg:ClearAllPoints()
 	chatleftbg:SetSize(width+adjust+1, height+adjust+32)
 	chatleftbg:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMLEFT", 10, 10)
 	
+	-- left chat tab
+	tabsbgleft:SetWidth(C.chat.width-10)
+	
 	-- right chat background
 	if C.chat.loot then
+		-- right chat background
 		chatrightbg:ClearAllPoints()
 		chatrightbg:SetSize(width+adjust+1, height+adjust+32)
 		chatrightbg:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -10, 10)
+		
+		-- right chat tab
+		tabsbgright:SetWidth(C.chat.width-10)
 	else
 		chatrightbg:Kill()
 		tabsbgright:Kill()
