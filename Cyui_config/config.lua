@@ -71,6 +71,11 @@ C.classtimer = {
 	trinketbar = {1,.75,.14},
 }
 
+C.filger = {
+	--enable = false,
+	--configmode = true,
+}
+
 C.actionbar = {
 	buttonsize = 24,
 	petbuttonsize = 18,
@@ -148,11 +153,19 @@ C.utilities = {
 	--lazyrunner = true,
 }
 
-C.announce = {
-	--interrupt = true,
+C.announcement = {
+	interrupt = true,
 	--conjured = true,
 	--cc = true,
-	--bg = false,
+}
+
+C.skin = {
+--	bigwigs = true,
+--	dbm = true,
+--	omen = true,
+--	postal = true,
+--	recount = true,
+	skada = true,
 }
 
 C.media = {

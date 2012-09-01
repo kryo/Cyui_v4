@@ -1,7 +1,8 @@
-local T, C, L = unpack(Tukui)
+local T, C, L, G = unpack(Tukui)
 
 -- Postal reskin by Cadayron
 -- http://www.tukui.org/forums/topic.php?id=14548
+if not IsAddOnLoaded("Postal") or C.skin.postal ~= true then return end
 
 function cSkinButton(self)
 	T.SkinButton(self)

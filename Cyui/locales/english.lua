@@ -23,7 +23,7 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	TukuiConfigUILocalization.ufsizesmallhealthheight = "Health bar height (for Target, ToT, Pet frames)"
 	TukuiConfigUILocalization.ufsizesmallpowerheight = "Power bar height (for Target, ToT, Pet frames)"
 	TukuiConfigUILocalization.ufsizesmallunitframewidth = "Unitframe width (for Target, ToT, Pet frames)"
-	TukuiConfigUILocalization.ufsizeminimapsize = "Minimap size"
+	--TukuiConfigUILocalization.ufsizeminimapsize = "Minimap size"
 	
 	-- unitframes
 	TukuiConfigUILocalization.unitframeseclipsetext = "Display Eclipse text on unitframe"
@@ -31,7 +31,7 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	
 	-- classtimer
 	TukuiConfigUILocalization.classtimer = "Classtimer"
-	TukuiConfigUILocalization.classtimerenable = "Enable classtimer"
+	TukuiConfigUILocalization.classtimerenable = "Enable Classtimer"
 	TukuiConfigUILocalization.classtimerlayout = "Choose layout (1 - buffs and debuffs on player frame; 2 - debuffs on target frame"
 	TukuiConfigUILocalization.classtimerclasscolor = "Enable classcolored bars"
 	TukuiConfigUILocalization.classtimerbarheight = "Height of classtimer bars"
@@ -45,10 +45,13 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	TukuiConfigUILocalization.classtimertargetdebuff = "Color of the target debuffs bar"
 	TukuiConfigUILocalization.classtimertrinketbar = "Color of the trinket bar"
 	
+	-- filger
+	--TukuiConfigUILocalization.filgerenable = "Enable Filger"
+	
 	-- actionbar
 	TukuiConfigUILocalization.actionbarpetmouseover = "Enable pet bar on mouseover"
-	TukuiConfigUILocalization.actionbardhamphmode = "Alternative actionbar layout, 4 bottom barss and one on right side (aka Dhamph mode)"
-	TukuiConfigUILocalization.actionbarcubes = "Enable cubes"
+	TukuiConfigUILocalization.actionbardhamphmode = "Alternative actionbar layout, 4 bottom bars and one on right side"
+	TukuiConfigUILocalization.actionbarcubes = "Enable cubes next to bottom actionbar"
 	
 	-- datatext
 	TukuiConfigUILocalization.datatextpanelsize = "Panel size for datatext"
@@ -61,7 +64,7 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	TukuiConfigUILocalization.chatspam = "Hide miscellaneous spam (duels won/lost, auctions)"
 	
 	-- tooltip
-	TukuiConfigUILocalization.tooltiprightpanel = "Parent tooltip to Recount/Skada window"
+	TukuiConfigUILocalization.tooltiprightpanel = "Parent tooltip to Recount/Skada window (right side of the screen)"
 	
 	-- utilities
 	TukuiConfigUILocalization.utilities = "Miscellaneous"
@@ -72,9 +75,17 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	--TukuiConfigUILocalization.utilitiesrepbar = ""
 	
 	-- announce
-	TukuiConfigUILocalization.announce = "Announcer"
-	TukuiConfigUILocalization.announceinterrupt = "Enable announce of interrupts to party/raid chat"
-	TukuiConfigUILocalization.announceconjured = "Enable announce of conjured items to party/raid chat"
-	TukuiConfigUILocalization.announcecc = "Announce crowd control abilities and their targets"
-	TukuiConfigUILocalization.announcebg = "Enable annoucing scripts on battlegrounds"
+	TukuiConfigUILocalization.announcement = "Announcements"
+	TukuiConfigUILocalization.announcementinterrupt = "Enable announce of interrupts to party/raid chat"
+	--TukuiConfigUILocalization.announcementconjured = "Enable announce of conjured items to party/raid chat"
+	--TukuiConfigUILocalization.announcementcc = "Announce crowd control abilities and their targets"
+	--TukuiConfigUILocalization.announcementbg = "Enable annoucing scripts on battlegrounds"
+	
+	-- skinning
+	--TukuiConfigUILocalization.skinbigwigs = ""
+	--TukuiConfigUILocalization.skindbm = ""
+	--TukuiConfigUILocalization.skinomen = ""
+	--TukuiConfigUILocalization.skinpostal = ""
+	--TukuiConfigUILocalization.skinrecount = ""
+	TukuiConfigUILocalization.skinskada = "Reskin Skada"
 end

@@ -89,7 +89,7 @@ T.PostUpdateRaidUnit = function(self)
 	self.Health.frequentUpdates = true
 	
 	if C.unitframes.unicolor == true then
-		self.Health.colorDisconnected = true
+		self.Health.colorDisconnected = false
 		self.Health.colorClass = false
 		self.Health:SetStatusBarColor(.3,.3,.3,1)
 		self.Health.bg:SetVertexColor(unpack(bgcolor))

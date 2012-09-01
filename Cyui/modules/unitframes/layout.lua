@@ -363,8 +363,9 @@ for _, frame in pairs(units) do
 			if T.myclass == "DEATHKNIGHT" then
 				self.Runes:ClearAllPoints()
 				self.Runes:SetPoint("BOTTOMLEFT", self.Health, "TOPLEFT", 0, 5)
-				self.Runes:SetWidth(self.Power:GetWidth())
+				
 				self.Runes:SetHeight(PWRheight+1)
+				self.Runes:SetWidth(UFwidth)				
 				self.Runes:SetBackdrop(nil)
 				
 				for i = 1, 6 do
@@ -537,7 +538,7 @@ for _, frame in pairs(units) do
 		self.Name:ClearAllPoints()
 		self.Name:SetFont(uffont, fs-1, "THINOUTLINE")
 		self.Name:SetPoint("LEFT", self.Health, "LEFT", 5, 0)
-		self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:nameshort]')
+		--self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:nameshort]')
 		
 		-- castbar
 		if C.unitframes.unitcastbar == true then

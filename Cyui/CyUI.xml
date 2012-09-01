@@ -4,8 +4,6 @@
 	<Script file="core\launch.lua"/>
 	<Script file="core\commands.lua"/>
 	
-	<Script file="core\filters\announces.lua"/>
-	
 	<Script file="locales\english.lua"/>
 	
 	<Script file="modules\actionbars\actionbars.lua"/>
@@ -13,6 +11,9 @@
 	<Script file="modules\actionbars\bartotem.lua"/>
 	<Script file="modules\actionbars\buttons.lua"/>
 	<Script file="modules\actionbars\buttons_dhamph.lua"/>
+	
+	<Script file="modules\announcement\interrupt.lua"/>
+	<Script file="modules\announcement\spells.lua"/>
 	
 	<Script file="modules\bags\bags.lua"/>
 	
@@ -26,6 +27,9 @@
 	
 	<Script file="modules\datatext\time.lua"/>
 	
+	<Script file="modules\filger\filger.lua"/>
+	<Script file="modules\filger\filters.lua"/>
+	
 	<Script file="modules\maps\maps.lua"/>
 	
 	<Script file="modules\misc\altpowerbar.lua"/>
@@ -36,7 +40,12 @@
 	
 	<Script file="modules\panels\panels.lua"/>
 	
+	<Script file="modules\skins\big wigs.lua"/>
+	<Script file="modules\skins\dbm.lua"/>
+	<Script file="modules\skins\omen.lua"/>
 	<Script file="modules\skins\postal.lua"/>
+	<Script file="modules\skins\recount.lua"/>
+	<Script file="modules\skins\skada.lua"/>
 	
 	<Script file="modules\tooltip\tooltip.lua"/>
 	

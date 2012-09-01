@@ -301,7 +301,7 @@ CLASS_FILTERS = {
 			CreateSpellEntry(467),		-- Thorns
 			CreateSpellEntry(80951),	-- Pulverize
 			CreateSpellEntry(62600), CreateSpellEntry(62606),	-- Savage Defense
-			CreateSpellEntry(33891),	--Tree of life
+			CreateSpellEntry(33891),	-- Tree of life
 		},
 		procs = {
 			CreateSpellEntry(16870),	-- Clearcasting
