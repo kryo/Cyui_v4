@@ -177,3 +177,33 @@ T.CyPostUpdatePower = function(power, unit, min, max)
 		end
 	end
 end
+
+--[[ -- rogue/druid combo bar
+hooksecurefunc(T, "ComboPointsBarUpdate", function(self, parent, points)
+	local s = parent.shadow
+	local b = parent.Buffs
+		
+	if (T.myclass == "ROGUE" or T.myclass == "DRUID") and C.unitframes.movecombobar then
+		-- always show we this option enabled
+		s:Point("TOP", 0, 0)
+		self:Show()
+	else
+		if points > 0 then
+			if s then
+				s:Point("TOPLEFT", -4, 12)
+			end
+			if b then 
+				b:ClearAllPoints() 
+				b:SetPoint("BOTTOMLEFT", parent, "TOPLEFT", 0, 14)
+			end
+		else
+			if s then
+				s:Point("TOPLEFT", -4, 1)
+			end
+			if b then 
+				b:ClearAllPoints() 
+				b:SetPoint("BOTTOMLEFT", parent, "TOPLEFT", 0, 4)
+			end
+		end
+	end
+end) ]]

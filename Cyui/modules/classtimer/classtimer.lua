@@ -651,7 +651,7 @@ local function OnUnitFramesLoad(self, event, addon)
 		playerFrame:SetHiddenHeight(-yOffset)
 		
 		if (playerClass == "ROGUE") then
-			if (C.unitframes.movecombobar == false or C.unitframes.classiccombo == true) then
+			if C.unitframes.classiccombo == true then
 				playerFrame:SetPoint("BOTTOMLEFT", TukuiPlayer, "TOPLEFT", 0, yOffset)
 				playerFrame:SetPoint("BOTTOMRIGHT", TukuiPlayer, "TOPRIGHT", 0, yOffset)
 			else
@@ -700,7 +700,7 @@ local function OnUnitFramesLoad(self, event, addon)
 		playerFrame:SetHiddenHeight(-yOffset)
 		
 		if (playerClass == "ROGUE") then
-			if (C.unitframes.movecombobar == false or C.unitframes.classiccombo == true) then
+			if C.unitframes.classiccombo == true then
 				playerFrame:SetPoint("BOTTOMLEFT", TukuiPlayer, "TOPLEFT", 0, yOffset)
 				playerFrame:SetPoint("BOTTOMRIGHT", TukuiPlayer, "TOPRIGHT", 0, yOffset)
 			else

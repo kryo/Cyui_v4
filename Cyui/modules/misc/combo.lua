@@ -1,5 +1,5 @@
 local T, C, L, G = unpack(Tukui)
-
+--[[ 
 if not C.unitframes.enable then return end
 if C.unitframes.classiccombo == false then
 	TukuiCombo:Kill()
@@ -98,4 +98,4 @@ for i = 1, 5 do
 		TukuiCombo[i]:Point("LEFT", TukuiCombo[i-1], "RIGHT", 1, 0)
 		TukuiCombo[i]:Width(ufw/5-1)
 	end
-end
+end ]]
