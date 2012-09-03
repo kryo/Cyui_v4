@@ -72,8 +72,8 @@ C.classtimer = {
 }
 
 C.filger = {
-	--enable = false,
-	--configmode = true,
+	enable = false,
+	iconsize = 40,
 }
 
 C.actionbar = {
@@ -155,17 +155,8 @@ C.utilities = {
 
 C.announcement = {
 	interrupt = true,
-	--conjured = true,
-	--cc = true,
-}
-
-C.skin = {
---	bigwigs = true,
---	dbm = true,
---	omen = true,
---	postal = true,
---	recount = true,
-	skada = true,
+	spells = false,
+	down = false,
 }
 
 C.media = {

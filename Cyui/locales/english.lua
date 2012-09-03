@@ -46,7 +46,8 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	TukuiConfigUILocalization.classtimertrinketbar = "Color of the trinket bar"
 	
 	-- filger
-	--TukuiConfigUILocalization.filgerenable = "Enable Filger"
+	TukuiConfigUILocalization.filger = "Filger"
+	TukuiConfigUILocalization.filgerenable = "Enable Filger"	
 	
 	-- actionbar
 	TukuiConfigUILocalization.actionbarpetmouseover = "Enable pet bar on mouseover"
@@ -76,12 +77,11 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	
 	-- announce
 	TukuiConfigUILocalization.announcement = "Announcements"
-	TukuiConfigUILocalization.announcementinterrupt = "Enable announce of interrupts to party/raid chat"
-	--TukuiConfigUILocalization.announcementconjured = "Enable announce of conjured items to party/raid chat"
-	--TukuiConfigUILocalization.announcementcc = "Announce crowd control abilities and their targets"
-	--TukuiConfigUILocalization.announcementbg = "Enable annoucing scripts on battlegrounds"
+	TukuiConfigUILocalization.announcementinterrupt = "Announce succesfull interrupts to party or raid chat"
+	TukuiConfigUILocalization.announcementspell = "Announce important cooldowns to party or raid chat"
 	
 	-- skinning
+	TukuiConfigUILocalization.skin = "Skinning"
 	--TukuiConfigUILocalization.skinbigwigs = ""
 	--TukuiConfigUILocalization.skindbm = ""
 	--TukuiConfigUILocalization.skinomen = ""
