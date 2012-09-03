@@ -1,18 +1,5 @@
 local T, C, L, G = unpack(Tukui)
 
--- local function BGCheck()
-    -- local zone = GetZoneText()
-    -- if ((zone == L.pvpzone_AV) or
-		-- (zone == L.pvpzone_AB) or
-		-- (zone == L.pvpzone_WSG) or
-		-- (zone == L.pvpzone_EOTS) or
-		-- (zone == L.pvpzone_SOTA) or
-		-- (zone == L.pvpzone_TBFG)) then
-        -- check = true
-	-- end
-	-- return check
--- end
-
 -- interrupt announcer
 if C.announcement.interrupt ~= true then return end
 
