@@ -5,8 +5,8 @@
 	<Script file="core\commands.lua"/>
 	<Script file="core\dev.lua"/>
 	<Script file="core\moveui.lua"/>
-	<Script file="core\raidbuffwatch.lua"/>
 	
+	<Script file="core\filters\raidbuffwatch.lua"/>	
 	<Script file="core\filters\spells.lua"/>
 	
 	<Script file="locales\english.lua"/>
