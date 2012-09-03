@@ -289,6 +289,7 @@ CLASS_FILTERS = {
 			CreateSpellEntry(17116),	-- Nature's Swiftness
 			CreateSpellEntry(5229),		-- Enrage
 			CreateSpellEntry(52610),	-- Savage Roar
+			CreateSpellEntry(127538),	-- Savage Roar glyphed
 			CreateSpellEntry(5217),		-- Tiger's Fury
 			CreateSpellEntry(1850),		-- Dash
 			CreateSpellEntry(22842),	-- Frenzied Regeneration
@@ -302,6 +303,7 @@ CLASS_FILTERS = {
 			CreateSpellEntry(80951),	-- Pulverize
 			CreateSpellEntry(62600), CreateSpellEntry(62606),	-- Savage Defense
 			CreateSpellEntry(33891),	-- Tree of life
+			CreateSpellEntry(106922),	-- Might of Ursoc
 		},
 		procs = {
 			CreateSpellEntry(16870),	-- Clearcasting
@@ -431,6 +433,7 @@ CLASS_FILTERS = {
 			CreateSpellEntry(26017),	-- Vindication
 			CreateSpellEntry(68055),	-- Judgements of the Just
 			CreateSpellEntry(86273),	-- Illuminated Healing
+			CreateSpellEntry(20925),	-- Sacred Shield
 		},
 		player = {
 			CreateSpellEntry(642),		-- Divine Shield
