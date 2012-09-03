@@ -6,7 +6,7 @@ TukuiWatchFrameAnchor:Point("TOPRIGHT", UIParent, -110, -175)
 
 -- achievements
 TukuiAchievementHolder:ClearAllPoints()
-TukuiAchievementHolder:SetPoint("CENTER", UIParent, "CENTER", 0, 200)
+TukuiAchievementHolder:SetPoint("CENTER", UIParent, "CENTER", 0, 275)
 
 -- durability
 hooksecurefunc(DurabilityFrame,"SetPoint",function(self,_,parent)
@@ -18,12 +18,12 @@ end)
 
 -- vehicle
 TukuiVehicleAnchor:ClearAllPoints()
-TukuiVehicleAnchor:SetPoint("TOP", UIParent, 0, -200)
+TukuiVehicleAnchor:SetPoint("TOP", UIParent, 0, -150)
 
 -- loot
 if C.loot.lootframe == true then
 	TukuiRollAnchor:ClearAllPoints()
-	TukuiRollAnchor:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 600)
+	TukuiRollAnchor:SetPoint("TOP", UIParent, "TOP", 0, -300)
 end
 
 -- menu
@@ -60,6 +60,7 @@ local function MoveUI()
 		FilgerTargetProcMover,
 		FilgerTargetBuffMover,
 		FilgerTargetDebuffMover,
+		FilgerMiscMover
 	}
 	
 	if FilgerPlayerBuffMover or FilgerPlayerDebuffMover or FilgerPlayerProcMover or FilgerTargetProcMover or FilgerTargetBuffMover or FilgerTargetDebuffMover then
