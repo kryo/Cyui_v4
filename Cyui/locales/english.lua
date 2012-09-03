@@ -47,7 +47,9 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	
 	-- filger
 	TukuiConfigUILocalization.filger = "Filger"
-	TukuiConfigUILocalization.filgerenable = "Enable Filger"	
+	TukuiConfigUILocalization.filgerenable = "Enable Filger"
+	TukuiConfigUILocalization.filgernormaliconsize = "Icon size"
+	TukuiConfigUILocalization.filgermisciconsize = "Icon size for special buffs"
 	
 	-- actionbar
 	TukuiConfigUILocalization.actionbarpetmouseover = "Enable pet bar on mouseover"
@@ -73,19 +75,10 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	TukuiConfigUILocalization.utilitiesscreenie = "Take a screenshot on every achievement earned"
 	TukuiConfigUILocalization.utilitiesbuffreminder = "Buff reminder"
 	TukuiConfigUILocalization.utilitiesbuffremindersound = "Plays a sound for buff reminder"
-	--TukuiConfigUILocalization.utilitiesrepbar = ""
 	
 	-- announce
 	TukuiConfigUILocalization.announcement = "Announcements"
 	TukuiConfigUILocalization.announcementinterrupt = "Announce succesfull interrupts to party or raid chat"
 	TukuiConfigUILocalization.announcementspell = "Announce important cooldowns to party or raid chat"
-	
-	-- skinning
-	TukuiConfigUILocalization.skin = "Skinning"
-	--TukuiConfigUILocalization.skinbigwigs = ""
-	--TukuiConfigUILocalization.skindbm = ""
-	--TukuiConfigUILocalization.skinomen = ""
-	--TukuiConfigUILocalization.skinpostal = ""
-	--TukuiConfigUILocalization.skinrecount = ""
-	TukuiConfigUILocalization.skinskada = "Reskin Skada"
+	TukuiConfigUILocalization.announcementsap = "Announce when sapped"
 end
