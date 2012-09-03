@@ -72,8 +72,9 @@ C.classtimer = {
 }
 
 C.filger = {
-	enable = false,
-	iconsize = 40,
+	enable = true,
+	normaliconsize = 35,
+	misciconsize = 28,
 }
 
 C.actionbar = {
@@ -157,6 +158,7 @@ C.announcement = {
 	interrupt = true,
 	spells = false,
 	down = false,
+	sap = true,
 }
 
 C.media = {
