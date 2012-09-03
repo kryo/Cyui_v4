@@ -394,10 +394,7 @@ CLASS_FILTERS = {
 		procs = {
 			CreateSpellEntry(44544),	-- Fingers of Frost
 			CreateSpellEntry(79683),	-- Arcane Missiles!
-			CreateSpellEntry(48108),	-- Hot Streak
-			CreateSpellEntry(64343),	-- Impact
-			CreateSpellEntry(83582),	-- Pyromaniac
-			CreateSpellEntry(12536),	-- Clearcasting
+			CreateSpellEntry(48108),	-- Pyroblast!
 			CreateSpellEntry(48107),	-- Heating Up
 		},
 	},
@@ -597,10 +594,10 @@ CLASS_FILTERS = {
 		},
 		procs = {
 			CreateSpellEntry(86121),	-- Soul Swap
-			CreateSpellEntry(71165),	-- Molten Cor
-			CreateSpellEntry(63167),	-- Decimation
+			CreateSpellEntry(108869),	-- Decimation
+			CreateSpellEntry(122351),	-- Molten Core
 			CreateSpellEntry(47283),	-- Empowered Imp
-			CreateSpellEntry(54274), CreateSpellEntry(54276), CreateSpellEntry(54277),	-- Backdraft rank 1/2/3
+			CreateSpellEntry(108563),	-- Backdraft
 		},
 	},
 	WARRIOR = {
