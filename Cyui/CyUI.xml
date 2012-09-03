@@ -19,6 +19,7 @@
 	
 	<Script file="modules\announcement\interrupt.lua"/>
 	<Script file="modules\announcement\spells.lua"/>
+	<Script file="modules\announcement\sap.lua"/>
 	
 	<Script file="modules\bags\bags.lua"/>
 	
@@ -32,8 +33,6 @@
 	
 	<Script file="modules\datatext\time.lua"/>
 	
-	<Script file="modules\filger\filger.lua"/>
-	
 	<Script file="modules\maps\maps.lua"/>
 	
 	<Script file="modules\misc\altpowerbar.lua"/>
@@ -45,4 +44,5 @@
 	<Script file="modules\tooltip\tooltip.lua"/>
 	
 	<Include file="modules\unitframes\load_unitframes.xml"/>
+	<Include file="modules\filger\load_filger.xml"/>
 </Ui>
