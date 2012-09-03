@@ -36,7 +36,7 @@ C.unitframes = {
 	movecombobar = true,
 	eclipsetext = true,
 	druidmanabar = false,
-	druidmushroombar = true, -- NYI
+	druidmushroombar = true,
 	-- raidframes
 	healcomm = true,
 	gridonly = true,
@@ -65,6 +65,7 @@ C.classtimer = {
 	spark = false,
 	castseparator = true,
 	-- color
+	backgroundalpha = 1,
 	playerbar = {.2,.6,0},
 	targetbar = {.33,.59,.33},
 	targetdebuff = {.54,.10,.10},

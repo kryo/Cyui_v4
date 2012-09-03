@@ -1,9 +1,8 @@
 local T, C, L, G = unpack(Tukui)
 
-L.logon_welcome1 = "|cffDC143CCyui|r v."
-L.logon_welcome2 = "loaded. Welcome"
---L.logon_welcome3 = "Type |cff00FFFF/uihelp|r or |cff00FFFF/cyhelp|r for details, or visit |cff00FFFFtukui.org|r!"
-L.logon_welcome3 = "Type |cff00FFFF/uihelp|r or visit |cff00FFFFtukui.org|r for help!"
+L.logon_welcome1 = "|cffDC143CCyui|r v"..GetAddOnMetadata("Cyui", "Version").." loaded. Welcome ".."|cffDC143C"..T.myname.."|r."
+--L.logon_welcome2 = "Type |cff00FFFF/uihelp|r or |cff00FFFF/cyhelp|r for details, or visit |cff00FFFFtukui.org|r!"
+L.logon_welcome2 = "Type |cff00FFFF/uihelp|r or visit |cff00FFFFtukui.org|r for help!"
 
 L.chat_whisper = "Whisper"
 L.chat_trade = "Trade"
@@ -44,6 +43,7 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	TukuiConfigUILocalization.classtimertargetbar = "Color for target bar"
 	TukuiConfigUILocalization.classtimertargetdebuff = "Color of the target debuffs bar"
 	TukuiConfigUILocalization.classtimertrinketbar = "Color of the trinket bar"
+	TukuiConfigUILocalization.classtimerbackgroundalpha = "Set the background alpha of the bar"
 	
 	-- filger
 	TukuiConfigUILocalization.filger = "Filger"
@@ -79,6 +79,7 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	-- announce
 	TukuiConfigUILocalization.announcement = "Announcements"
 	TukuiConfigUILocalization.announcementinterrupt = "Announce succesfull interrupts to party or raid chat"
-	TukuiConfigUILocalization.announcementspell = "Announce important cooldowns to party or raid chat"
+	TukuiConfigUILocalization.announcementspells = "Announce important cooldowns to party or raid chat"
 	TukuiConfigUILocalization.announcementsap = "Announce when sapped"
+	TukuiConfigUILocalization.announcementdown = "Announce when cooldowns are over (not recommended)"
 end
