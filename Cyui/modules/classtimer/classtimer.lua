@@ -6,31 +6,31 @@ local CreateColor = function(red, green, blue, alpha)
 	return {red/255, green/255, blue/255, alpha}
 end
 
-local pwrh = C.ufsize.powerheight
-local fs = C.classtimer.fontsize
-local BAR_HEIGHT = C.classtimer.barheight
-local BAR_SPACING = C.classtimer.barspacing
-local LAYOUT = C.classtimer.layout
-local BACKGROUND_ALPHA = 1
-local ICON_POSITION = 0
-local ICON_COLOR = CreateColor(120,120,120,1)
-local SPARK = C.classtimer.spark
-local CAST_SEPARATOR = C.classtimer.castseparator
-local CAST_SEPARATOR_COLOR = CreateColor(0,0,0,.5)
-local TEXT_MARGIN = 5
+local pwrh, fs, BAR_HEIGHT, BAR_SPACING, LAYOUT, BACKGROUND_ALPHA, ICON_POSITION, ICON_COLOR, SPARK, CAST_SEPARATOR, CAST_SEPARATOR_COLOR, TEXT_MARGIN, PERMANENT_AURA_VALUE, PLAYER_BAR_COLOR, PLAYER_DEBUFF_COLOR, TARGET_BAR_COLOR, TARGET_DEBUFF_COLOR, TRINKET_BAR_COLOR, SORT_DIRECTION, TENTHS_TRESHOLD, spell_font, time_font, STACKS_FONT
 
-local PERMANENT_AURA_VALUE = 1
-local PLAYER_BAR_COLOR = CreateColor(70, 70, 150, 1)
-local PLAYER_DEBUFF_COLOR = nil
-local TARGET_BAR_COLOR = CreateColor(70, 150, 70, 1)
-local TARGET_DEBUFF_COLOR = CreateColor(150, 70, 70, 1)
-local TRINKET_BAR_COLOR = CreateColor(150, 150, 70, 1)
-local SORT_DIRECTION = C.classtimer.direction
-local TENTHS_TRESHOLD = 1
-
-local spell_font = {C.media.uffont, fs, "OUTLINE"}
-local time_font = {C.media.uffont, fs-1, "OUTLINE"}
-local STACKS_FONT = {C.media.uffont, fs-2, "OUTLINE"}
+pwrh = C.ufsize.powerheight
+fs = C.classtimer.fontsize
+BAR_HEIGHT = C.classtimer.barheight
+BAR_SPACING = C.classtimer.barspacing
+LAYOUT = C.classtimer.layout
+BACKGROUND_ALPHA = C.classtimer.backgroundalpha
+ICON_POSITION = 0
+ICON_COLOR = CreateColor(120,120,120,1)
+SPARK = C.classtimer.spark
+CAST_SEPARATOR = C.classtimer.castseparator
+CAST_SEPARATOR_COLOR = CreateColor(0,0,0,.5)
+TEXT_MARGIN = 5
+PERMANENT_AURA_VALUE = 1
+PLAYER_BAR_COLOR = CreateColor(70, 70, 150, 1)
+PLAYER_DEBUFF_COLOR = nil
+TARGET_BAR_COLOR = CreateColor(70, 150, 70, 1)
+TARGET_DEBUFF_COLOR = CreateColor(150, 70, 70, 1)
+TRINKET_BAR_COLOR = CreateColor(150, 150, 70, 1)
+SORT_DIRECTION = C.classtimer.direction
+TENTHS_TRESHOLD = 1
+spell_font = {C.media.uffont, fs, "OUTLINE"}
+time_font = {C.media.uffont, fs-1, "OUTLINE"}
+STACKS_FONT = {C.media.uffont, fs-2, "OUTLINE"}
 
 if C.classtimer.classcolor ~= true then
 	PLAYER_BAR_COLOR = C.classtimer.playerbar
