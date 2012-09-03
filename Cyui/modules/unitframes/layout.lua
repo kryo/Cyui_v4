@@ -3,27 +3,28 @@ local T, C, L, G = unpack(Tukui)
 if not C.unitframes.enable then return end
 
 -- local variables
-local HPheight = T.Scale(C.ufsize.healthheight)
-local PWRheight = T.Scale(C.ufsize.powerheight)
-local UFwidth = T.Scale(C.ufsize.unitframewidth)
-local UFheight = T.Scale(HPheight+PWRheight+1)
-local sHPheight = T.Scale(C.ufsize.smallhealthheight)
-local sPWRheight = T.Scale(C.ufsize.smallpowerheight)
-local sUFwidth = T.Scale(C.ufsize.smallunitframewidth)
-local sUFheight = T.Scale(sHPheight+sPWRheight+1)
+local HPheight, PWRheight, UFwidth, UFheight, sHPheight, sPWRheight, sUFwidth, sUFheight, bgcolor, normTex, uffont, font, fs, player, target, tot, pet, focus, focustar
+HPheight = T.Scale(C.ufsize.healthheight)
+PWRheight = T.Scale(C.ufsize.powerheight)
+UFwidth = T.Scale(C.ufsize.unitframewidth)
+UFheight = T.Scale(HPheight+PWRheight+1)
+sHPheight = T.Scale(C.ufsize.smallhealthheight)
+sPWRheight = T.Scale(C.ufsize.smallpowerheight)
+sUFwidth = T.Scale(C.ufsize.smallunitframewidth)
+sUFheight = T.Scale(sHPheight+sPWRheight+1)
 
-local bgcolor = C.general.backgroundcolor
-local normTex = C.media.normTex
-local uffont = C.media.uffont
-local font = C.media.font
-local fs = 12
+bgcolor = C.general.backgroundcolor
+normTex = C.media.normTex
+uffont = C.media.uffont
+font = C.media.font
+fs = 12
 
-local player = TukuiPlayer
-local target = TukuiTarget
-local tot = TukuiTargetTarget
-local pet = TukuiPet
-local focus = TukuiFocus
-local focustar = TukuiFocusTarget
+player = TukuiPlayer
+target = TukuiTarget
+tot = TukuiTargetTarget
+pet = TukuiPet
+focus = TukuiFocus
+focustar = TukuiFocusTarget
 
 -- unitframes
 local units = {
@@ -249,7 +250,7 @@ for _, frame in pairs(units) do
 				TukuiWildMushroomBar:CreateBorder()
 				
 				for i = 1, 3 do
-					--TukuiWildMushroomBar:SetHeight(PWRheight)
+					TukuiWildMushroomBar[i]:SetHeight(PWRheight)
 					
 					if i == 1 then
 						TukuiWildMushroomBar[i]:SetWidth(UFwidth/3)
@@ -428,24 +429,22 @@ for _, frame in pairs(units) do
 			end
 			
 			-- rogue/druid
-			if T.myclass == "ROGUE" or T.myclass == "DRUID" then
-				do
-					TukuiCombo:ClearAllPoints()
-					TukuiCombo:Height(PWRheight)
-					TukuiCombo:Width(UFwidth)
-					TukuiCombo:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 5)
-					TukuiCombo:CreateBorder()
+			if (T.myclass == "ROGUE" and not C.unitframes.classiccombo) or T.myclass == "DRUID" then
+				TukuiCombo:ClearAllPoints()
+				TukuiCombo:Height(PWRheight)
+				TukuiCombo:Width(UFwidth)
+				TukuiCombo:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 5)
+				TukuiCombo:CreateBorder()
+				
+				for i = 1, 5 do
+					TukuiCombo[i]:Height(PWRheight)
 					
-					for i = 1, 5 do
-						TukuiCombo[i]:Height(PWRheight)
-						
-						if i == 1 then
-							TukuiCombo[i]:Width(UFwidth/5)
-							TukuiCombo[i]:SetPoint("LEFT", TukuiCombo, "LEFT", 0, 0)
-						else
-							TukuiCombo[i]:Width(UFwidth/5-1)
-							TukuiCombo[i]:Point("LEFT", TukuiCombo[i-1], "RIGHT", 1, 0)
-						end
+					if i == 1 then
+						TukuiCombo[i]:Width(UFwidth/5)
+						TukuiCombo[i]:SetPoint("LEFT", TukuiCombo, "LEFT", 0, 0)
+					else
+						TukuiCombo[i]:Width(UFwidth/5-1)
+						TukuiCombo[i]:Point("LEFT", TukuiCombo[i-1], "RIGHT", 1, 0)
 					end
 				end
 			end
