@@ -1,6 +1,6 @@
 ## Interface: 50001
 ## Author: Kryo
 ## Title: |cffDC143CCyui|r DPS/Tank layout
-## RequiredDeps: Tukui, CyUI
+## RequiredDeps: Tukui, Cyui
 
 raid.lua
