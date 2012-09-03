@@ -2,9 +2,10 @@ local T, C, L, G = unpack(Tukui)
 
 if not C.chat.enable then return end
 
-local width = T.Scale(C.chat.width)
-local height = T.Scale(C.chat.height)
-local adjust = 0
+local width, height, adjust
+width = T.Scale(C.chat.width)
+height = T.Scale(C.chat.height)
+adjust = 0
 if C.chat.background == true then adjust = 10 end
 
 T.SetDefaultChatPosition = function(frame)

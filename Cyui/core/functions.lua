@@ -1,17 +1,17 @@
 local T, C, L, G = unpack(Tukui)
 
-local target = TukuiTarget
-local tot = TukuiTargetTarget
-local focus = TukuiFocus
-
-local HPheight = T.Scale(C.ufsize.healthheight)
-local PWRheight = T.Scale(C.ufsize.powerheight)
-local UFwidth = T.Scale(C.ufsize.unitframewidth)
-local UFheight = T.Scale(HPheight+PWRheight+1)
-local sHPheight = T.Scale(C.ufsize.smallhealthheight)
-local sPWRheight = T.Scale(C.ufsize.smallpowerheight)
-local sUFwidth = T.Scale(C.ufsize.smallunitframewidth)
-local sUFheight = T.Scale(sHPheight+sPWRheight+1)
+local target, tot, focus, HPheight, PWRheight, UFwidth, UFheight, sHPheight, sPWRheight, sUFwidth, sUFheight
+target = TukuiTarget
+tot = TukuiTargetTarget
+focus = TukuiFocus
+HPheight = T.Scale(C.ufsize.healthheight)
+PWRheight = T.Scale(C.ufsize.powerheight)
+UFwidth = T.Scale(C.ufsize.unitframewidth)
+UFheight = T.Scale(HPheight+PWRheight+1)
+sHPheight = T.Scale(C.ufsize.smallhealthheight)
+sPWRheight = T.Scale(C.ufsize.smallpowerheight)
+sUFwidth = T.Scale(C.ufsize.smallunitframewidth)
+sUFheight = T.Scale(sHPheight+sPWRheight+1)
 
 -- update buff/debuff position and skin
 local function PostCreateAura(self, button)
@@ -177,33 +177,3 @@ T.CyPostUpdatePower = function(power, unit, min, max)
 		end
 	end
 end
-
---[[ -- rogue/druid combo bar
-hooksecurefunc(T, "ComboPointsBarUpdate", function(self, parent, points)
-	local s = parent.shadow
-	local b = parent.Buffs
-		
-	if (T.myclass == "ROGUE" or T.myclass == "DRUID") and C.unitframes.movecombobar then
-		-- always show we this option enabled
-		s:Point("TOP", 0, 0)
-		self:Show()
-	else
-		if points > 0 then
-			if s then
-				s:Point("TOPLEFT", -4, 12)
-			end
-			if b then 
-				b:ClearAllPoints() 
-				b:SetPoint("BOTTOMLEFT", parent, "TOPLEFT", 0, 14)
-			end
-		else
-			if s then
-				s:Point("TOPLEFT", -4, 1)
-			end
-			if b then 
-				b:ClearAllPoints() 
-				b:SetPoint("BOTTOMLEFT", parent, "TOPLEFT", 0, 4)
-			end
-		end
-	end
-end) ]]

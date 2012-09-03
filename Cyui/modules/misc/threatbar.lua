@@ -1,6 +1,6 @@
 local T, C, L, G = unpack(Tukui)
 
-if C.utilities.threatbar ~= true then
+if not C.utilities.threatbar then
 	TukuiThreatBar:Kill()
 	TukuiThreatBar.text:Kill()
 	TukuiThreatBar.Title:Kill()

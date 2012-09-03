@@ -152,8 +152,8 @@ OnLogon:RegisterEvent("PLAYER_ENTERING_WORLD")
 OnLogon:SetScript("OnEvent", function(self, event)
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	if C.general.welcomemsg == true then
-		print(L.logon_welcome1..GetAddOnMetadata("CyUI", "Version").." "..L.logon_welcome2.." |cffDC143C"..T.myname.."|r.")
-		print(L.logon_welcome3)
+		print(L.logon_welcome1)
+		print(L.logon_welcome2)
 	end
 	
 	-- CyCVars()
