@@ -179,6 +179,93 @@ if C.chat.background then
 	end
 end
 
+-- filger
+if C.filger.enable == true then
+	-- player procs
+	local fplayerproc = CreateFrame("Frame", "FilgerPlayerProcMover", UIParent)
+	fplayerproc:SetTemplate("Default")
+	fplayerproc:Size(C.filger.iconsize*3, C.filger.iconsize)
+	fplayerproc:Point("RIGHT", UIParent, "CENTER", -200, C.filger.iconsize)
+	fplayerproc:SetMovable(true)
+	fplayerproc:SetClampedToScreen(true)
+	fplayerproc:SetBackdropBorderColor(1,0,0)
+	fplayerproc:FontString("Text", C.media.font, 12)
+	fplayerproc.Text:SetPoint("CENTER", FilgerPlayerProcMover, "CENTER", 0, 0)
+	fplayerproc.Text:SetText("Player Procs")
+	fplayerproc:Hide()
+	tinsert(T.AllowFrameMoving, fplayerproc)
+	
+	-- player buffs
+	local fplayerbuff = CreateFrame("Frame", "FilgerPlayerBuffMover", UIParent)
+	fplayerbuff:SetTemplate("Default")
+	fplayerbuff:Size(C.filger.iconsize*3, C.filger.iconsize)
+	fplayerbuff:Point("RIGHT", UIParent, "CENTER", -200, 0)
+	fplayerbuff:SetMovable(true)
+	fplayerbuff:SetClampedToScreen(true)
+	fplayerbuff:SetBackdropBorderColor(1,0,0)
+	fplayerbuff:FontString("Text", C.media.font, 12)
+	fplayerbuff.Text:SetPoint("CENTER", FilgerPlayerBuffMover, "CENTER", 0, 0)
+	fplayerbuff.Text:SetText("Player Buffs")
+	fplayerbuff:Hide()
+	tinsert(T.AllowFrameMoving, fplayerbuff)
+
+	-- player debuffs
+	local fplayerdebuff = CreateFrame("Frame", "FilgerPlayerDebuffMover", UIParent)
+	fplayerdebuff:SetTemplate("Default")
+	fplayerdebuff:Size(C.filger.iconsize*3, C.filger.iconsize)
+	fplayerdebuff:Point("RIGHT", UIParent, "CENTER", -200, -C.filger.iconsize)
+	fplayerdebuff:SetMovable(true)
+	fplayerdebuff:SetClampedToScreen(true)
+	fplayerdebuff:SetBackdropBorderColor(1,0,0)
+	fplayerdebuff:FontString("Text", C.media.font, 12)
+	fplayerdebuff.Text:SetPoint("CENTER", FilgerPlayerDebuffMover, "CENTER", 0, 0)
+	fplayerdebuff.Text:SetText("Player Debuffs")
+	fplayerdebuff:Hide()
+	tinsert(T.AllowFrameMoving, fplayerdebuff)
+	
+	-- target procs
+	local ftargetproc = CreateFrame("Frame", "FilgerTargetProcMover", UIParent)
+	ftargetproc:SetTemplate("Default")
+	ftargetproc:Size(C.filger.iconsize*3, C.filger.iconsize)
+	ftargetproc:Point("LEFT", UIParent, "CENTER", 200, C.filger.iconsize)
+	ftargetproc:SetMovable(true)
+	ftargetproc:SetClampedToScreen(true)
+	ftargetproc:SetBackdropBorderColor(1,0,0)
+	ftargetproc:FontString("Text", C.media.font, 12)
+	ftargetproc.Text:SetPoint("CENTER", FilgerTargetProcMover, "CENTER", 0, 0)
+	ftargetproc.Text:SetText("Target Procs")
+	ftargetproc:Hide()
+	tinsert(T.AllowFrameMoving, ftargetproc)
+	
+	-- target buffs
+	local ftargetbuff = CreateFrame("Frame", "FilgerTargetBuffMover", UIParent)
+	ftargetbuff:SetTemplate("Default")
+	ftargetbuff:Size(C.filger.iconsize*3, C.filger.iconsize)
+	ftargetbuff:Point("LEFT", UIParent, "CENTER", 200, 0)
+	ftargetbuff:SetMovable(true)
+	ftargetbuff:SetClampedToScreen(true)
+	ftargetbuff:SetBackdropBorderColor(1,0,0)
+	ftargetbuff:FontString("Text", C.media.font, 12)
+	ftargetbuff.Text:SetPoint("CENTER", FilgerTargetBuffMover, "CENTER", 0, 0)
+	ftargetbuff.Text:SetText("Target Buffs")
+	ftargetbuff:Hide()
+	tinsert(T.AllowFrameMoving, ftargetbuff)
+	
+	-- target debuffs
+	local ftargetdebuff = CreateFrame("Frame", "FilgerTargetDebuffMover", UIParent)
+	ftargetdebuff:SetTemplate("Default")
+	ftargetdebuff:Size(C.filger.iconsize*3, C.filger.iconsize)
+	ftargetdebuff:Point("LEFT", UIParent, "CENTER", 200, -C.filger.iconsize)
+	ftargetdebuff:SetMovable(true)
+	ftargetdebuff:SetClampedToScreen(true)
+	ftargetdebuff:SetBackdropBorderColor(1,0,0)
+	ftargetdebuff:FontString("Text", C.media.font, 12)
+	ftargetdebuff.Text:SetPoint("CENTER", FilgerTargetDebuffMover, "CENTER", 0, 0)
+	ftargetdebuff.Text:SetText("Target Debuffs")
+	ftargetdebuff:Hide()
+	tinsert(T.AllowFrameMoving, ftargetdebuff)
+end
+
 -- datatext position
 local DataTextPosition = function(f, t, o)
 	local left = TukuiInfoLeft

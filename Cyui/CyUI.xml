@@ -3,6 +3,11 @@
 	<Script file="core\api.lua"/>
 	<Script file="core\launch.lua"/>
 	<Script file="core\commands.lua"/>
+	<Script file="core\dev.lua"/>
+	<Script file="core\moveui.lua"/>
+	<Script file="core\raidbuffwatch.lua"/>
+	
+	<Script file="core\filters\spells.lua"/>
 	
 	<Script file="locales\english.lua"/>
 	
@@ -28,24 +33,14 @@
 	<Script file="modules\datatext\time.lua"/>
 	
 	<Script file="modules\filger\filger.lua"/>
-	<Script file="modules\filger\filters.lua"/>
 	
 	<Script file="modules\maps\maps.lua"/>
 	
 	<Script file="modules\misc\altpowerbar.lua"/>
-	<Script file="modules\misc\combo.lua"/>
-	<Script file="modules\misc\moveui.lua"/>
 	<Script file="modules\misc\screenie.lua"/>
 	<Script file="modules\misc\threatbar.lua"/>
 	
 	<Script file="modules\panels\panels.lua"/>
-	
-	<Script file="modules\skins\big wigs.lua"/>
-	<Script file="modules\skins\dbm.lua"/>
-	<Script file="modules\skins\omen.lua"/>
-	<Script file="modules\skins\postal.lua"/>
-	<Script file="modules\skins\recount.lua"/>
-	<Script file="modules\skins\skada.lua"/>
 	
 	<Script file="modules\tooltip\tooltip.lua"/>
 	

@@ -237,27 +237,28 @@ for _, frame in pairs(units) do
 		elseif T.level ~= MAX_PLAYER_LEVEL then
 		end
 		
-		-- druid mana
+		-- druid mana and mushroom bar
 		if T.myclass == "DRUID" then
 			self.DruidManaText:SetFont(uffont, fs-1)
 			
 			if C.unitframes.druidmushroombar then
-				TukuiWildMushroomBar:Kill()
-				-- TukuiWildMushroomBar:ClearAllPoints()
-				-- TukuiWildMushroomBar:SetHeight(PWRheight)
-				-- TukuiWildMushroomBar:SetWidth(UFwidth)
-				-- TukuiWildMushroomBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 35)
-				-- TukuiWildMushroomBar:CreateBorder()
+				TukuiWildMushroomBar:ClearAllPoints()
+				TukuiWildMushroomBar:SetHeight(PWRheight)
+				TukuiWildMushroomBar:SetWidth(UFwidth)
+				TukuiWildMushroomBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 5)
+				TukuiWildMushroomBar:CreateBorder()
 				
-				-- for i = 1, 3 do
-					-- TukuiWildMushroomBar:SetHeight(PWRheight-2)
+				for i = 1, 3 do
+					--TukuiWildMushroomBar:SetHeight(PWRheight)
 					
-					-- if i == 1 then
-						-- TukuiWildMushroomBar[i]:SetWidth(UFwidth/3)
-					-- else
-						-- TukuiWildMushroomBar[i]:SetWidth(UFwidth/3-1)
-					-- end
-				-- end
+					if i == 1 then
+						TukuiWildMushroomBar[i]:SetWidth(UFwidth/3)
+						TukuiWildMushroomBar[i]:SetHeight(PWRheight)
+					else
+						TukuiWildMushroomBar[i]:SetWidth(UFwidth/3-1)
+						TukuiWildMushroomBar[i]:SetHeight(PWRheight)
+					end
+				end
 			end
 		end
 		
@@ -422,6 +423,29 @@ for _, frame in pairs(units) do
 						TukuiShadowOrbsBar[i]:SetWidth(UFwidth/3)
 					else
 						TukuiShadowOrbsBar[i]:SetWidth(UFwidth/3-1)
+					end
+				end
+			end
+			
+			-- rogue/druid
+			if T.myclass == "ROGUE" or T.myclass == "DRUID" then
+				do
+					TukuiCombo:ClearAllPoints()
+					TukuiCombo:Height(PWRheight)
+					TukuiCombo:Width(UFwidth)
+					TukuiCombo:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 5)
+					TukuiCombo:CreateBorder()
+					
+					for i = 1, 5 do
+						TukuiCombo[i]:Height(PWRheight)
+						
+						if i == 1 then
+							TukuiCombo[i]:Width(UFwidth/5)
+							TukuiCombo[i]:SetPoint("LEFT", TukuiCombo, "LEFT", 0, 0)
+						else
+							TukuiCombo[i]:Width(UFwidth/5-1)
+							TukuiCombo[i]:Point("LEFT", TukuiCombo[i-1], "RIGHT", 1, 0)
+						end
 					end
 				end
 			end
