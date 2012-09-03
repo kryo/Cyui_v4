@@ -233,10 +233,8 @@ end
 local RaidPosition = CreateFrame("Frame")
 RaidPosition:RegisterEvent("PLAYER_LOGIN")
 RaidPosition:SetScript("OnEvent", function(self, event)
-	local raid = G.UnitFrames.RaidUnits
-	
-	raid:ClearAllPoints()
-	raid:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 140*T.raidscale)
+	G.UnitFrames.RaidUnits:ClearAllPoints()
+	G.UnitFrames.RaidUnits:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 140*T.raidscale)
 end)
 
 local MaxGroup = CreateFrame("Frame")

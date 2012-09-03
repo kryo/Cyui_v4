@@ -12,7 +12,7 @@ xOffset = T.Scale(0)
 yOffset = T.Scale(-7)
 point = "TOP"
 columnSpacing = T.Scale(0)
-columnAnchorPoint = "TOP"
+columnAnchorPoint = "BOTTOM"
 bgcolor = C.general.backgroundcolor
 normTex = C.media.normTex
 blank = C.media.blank
@@ -20,7 +20,8 @@ uffont = C.media.uffont
 font = C.media.font
 fs = 11
 solo = false -- coding only
-	
+C["unitframes"].raidunitdebuffwatch = false
+
 T.RaidFrameAttributes = function()
 	return
 	"TukuiRaid",
@@ -31,8 +32,8 @@ T.RaidFrameAttributes = function()
 		self:SetWidth(header:GetAttribute("initial-width"))
 		self:SetHeight(header:GetAttribute("initial-height"))
 	]],
-	"initial-width", T.Scale(width),
-	"initial-height", T.Scale(height),
+	"initial-width", width,
+	"initial-height", height,
 	"showParty", showParty,
 	"showRaid", showRaid,
 	"showPlayer", showPlayer,
@@ -44,7 +45,7 @@ T.RaidFrameAttributes = function()
 	"groupingOrder", "1,2,3,4,5,6,7,8",
 	"groupBy", "GROUP",
 	"maxColumns", 8,
-	--"unitsPerColumn", 5
+	--"unitsPerColumn", 5,
 	"columnSpacing", columnSpacing,
 	"columnAnchorPoint", columnAnchorPoint
 end
@@ -152,10 +153,8 @@ end
 local RaidPosition = CreateFrame("Frame")
 RaidPosition:RegisterEvent("PLAYER_LOGIN")
 RaidPosition:SetScript("OnEvent", function(self, event)
-	local raid = G.UnitFrames.RaidUnits
-	
-	raid:ClearAllPoints()
-	raid:SetPoint("LEFT", UIParent, "LEFT", 15, 0)
+	G.UnitFrames.RaidUnits:ClearAllPoints()
+	G.UnitFrames.RaidUnits:SetPoint("LEFT", UIParent, "LEFT", 15, 0)
 end)
 
 local MaxGroup = CreateFrame("Frame")
