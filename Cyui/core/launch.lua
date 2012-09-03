@@ -126,52 +126,26 @@ T.ChatSetup = function()
 	ToggleChatColorNamesByClassGroup(true, "CHANNEL5")
 end
 
---[[ local function CyCVars()
-	SetCVar("lootUnderMouse", 1)
-	SetCVar("autoLootDefault", 1)
-	SetCVar("nameplateShowEnemies", 1)
-	SetCVar("nameplateShowEnemyPets", 1)
-	SetCVar("cameraDistanceMax", 50)
-	SetCVar("cameraDistanceMaxFactor", 3.4)
-	SetCVar("Maxfps", 120)
-	SetCVar("autoDismountFlying", 1)
+-- Not on live!!
+-- local function CyCVars()
+	-- SetCVar("lootUnderMouse", 1)
+	-- SetCVar("autoLootDefault", 1)
+	-- SetCVar("nameplateShowEnemies", 1)
+	-- SetCVar("nameplateShowEnemyPets", 1)
+	-- SetCVar("cameraDistanceMax", 50)
+	-- SetCVar("cameraDistanceMaxFactor", 3.4)
+	-- SetCVar("Maxfps", 120)
+	-- SetCVar("autoDismountFlying", 1)
 	--SetCVar("showLootSpam", 0)
-	SetCVar("chatBubbles", 1)
-	SetCVar("UnitNameOwn", 0)
-	SetCVar("UnitNameNPC", 1)
-	SetCVar("UnitNameFriendlyPlayerName", 1)
-	SetCVar("UnitNameEnemyPlayerName", 1)
-	SetCVar("secureAbilityToggle", 1)
+	-- SetCVar("chatBubbles", 1)
+	-- SetCVar("UnitNameOwn", 0)
+	-- SetCVar("UnitNameNPC", 1)
+	-- SetCVar("UnitNameFriendlyPlayerName", 1)
+	-- SetCVar("UnitNameEnemyPlayerName", 1)
+	-- SetCVar("secureAbilityToggle", 1)
 
 	--SetCVar("taintlog", 1)
-end
- ]]
-StaticPopupDialogs["DISABLE_RAID"] = {
-	text = L.popup_2raidactive,
-	button1 = "DPS",
-	button2 = "HEAL",
-	OnAccept = function() DisableAddOn("CyUI_Raid_Heal") EnableAddOn("CyUI_Raid") ReloadUI() end,
-	OnCancel = function() EnableAddOn("CyUI_Raid_Heal") DisableAddOn("CyUI_Raid") ReloadUI() end,
-	timeout = 0,
-	whileDead = 1,
-	preferredIndex = 3,
-}
-
-StaticPopupDialogs["DISABLE_TUKUIRAIDFRAMES"] = {
-	text = "Default Tukui raid frames are enabled, do you want to disable them?",
-	button1 = "Accept",
-	OnAccept = function()
-		DisableAddOn("Tukui_Raid_Healing")
-		DisableAddOn("Tukui_Raid")
-		if not IsAddOnLoaded("CyUI_Raid") or not IsAddOnLoaded("CyUI_Raid_Heal") then
-			EnableAddOn("CyUI_Raid")
-		end
-		ReloadUI()
-	end,
-	timeout = 0,
-	whileDead = 1,
-	preferredIndex = 3,
-}
+-- end
 
 local OnLogon = CreateFrame("Frame")
 OnLogon:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -182,13 +156,5 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		print(L.logon_welcome3)
 	end
 	
-	--CyCVars()
-	
-	if (IsAddOnLoaded("Tukui_raid") or IsAddOnLoaded("Tukui_healing")) then
-		StaticPopup_Show("DISABLE_TUKUIRAIDFRAMES")
-	end
-	
-	if (IsAddOnLoaded("Cyui_raid") and IsAddOnLoaded("Cyui_heal")) then
-		StaticPopup_Show("DISABLE_RAID")
-	end
+	-- CyCVars()
 end)
