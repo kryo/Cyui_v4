@@ -2,9 +2,11 @@ local T, C, L, G = unpack(Tukui)
 
 if not C.unitframes.enable == true then return end
 
+C["unitframes"].raidunitdebuffwatch = false
+
 local bgcolor, normTex, blank, uffont, font, fs, point, columnAnchorPoint, width, height, showParty, showRaid, showPlayer, xOffset, yOffset, columnSpacing, solo
 width = T.Scale(90*C["unitframes"].gridscale*T.raidscale)
-height = T.Scale(16*C["unitframes"].gridscale*T.raidscale)
+height = T.Scale(14*C["unitframes"].gridscale*T.raidscale)
 showParty = true
 showRaid = true
 showPlayer = C.unitframes.showplayerinparty
@@ -20,7 +22,6 @@ uffont = C.media.uffont
 font = C.media.font
 fs = 11
 solo = false -- coding only
-C["unitframes"].raidunitdebuffwatch = false
 
 T.RaidFrameAttributes = function()
 	return
@@ -103,7 +104,7 @@ T.PostUpdateRaidUnit = function(self)
 	-- name
 	self.Name:ClearAllPoints()
 	self.Name:SetParent(self.Health)
-	self.Name:SetPoint("LEFT", self.Health, "LEFT", 10, 0)
+	self.Name:SetPoint("LEFT", self.Health, "LEFT", 10, 1)
 	self.Name:SetFont(uffont, fs, "THINOUTLINE")
 	
 	-- leader icon
@@ -131,7 +132,7 @@ T.PostUpdateRaidUnit = function(self)
 	-- readycheck icon
 	self.ReadyCheck:Height(12*T.raidscale)
 	self.ReadyCheck:Width(12*T.raidscale)
-	self.ReadyCheck:SetPoint("CENTER", self.Health, "CENTER", 0, 5)
+	self.ReadyCheck:SetPoint("CENTER", self.Health, "CENTER", 10, 0)
 	
 	-- marker icon
 	if C["unitframes"].showsymbols == true then
