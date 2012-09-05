@@ -150,8 +150,6 @@ for _, frame in pairs(units) do
 				classicon:SetPoint("LEFT", self.Health, "RIGHT", 5, -4)
 			end
 			
-			
-
 			local class = classicon:CreateTexture(self:GetName().."_ClassIcon", "ARTWORK")
 			class:Point("TOPLEFT", 2, -2)
 			class:Point("BOTTOMRIGHT", -2, 2)
@@ -509,11 +507,11 @@ for _, frame in pairs(units) do
 		self.Health.value:SetPoint("RIGHT", self.Health, "RIGHT", -5, -1)
 		self.Health.PostUpdate = T.CyPostUpdateHealth
 		
-		-- target name
+		-- name
 		self.Name:ClearAllPoints()
 		self.Name:SetFont(font, fs+1, "THINOUTLINE")
 		self.Name:SetPoint("TOPLEFT", self.Power, "BOTTOMLEFT", 0, -10)
-		self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:namemedium] [Tukui:diffcolor][level] [shortclassification]')
+		self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:cynamelong] [Tukui:diffcolor][level] [shortclassification]')
 		self.Name.ClearAllPoints = T.dummy
 		self.Name.SetPoint = T.dummy
 	end
@@ -533,10 +531,11 @@ for _, frame in pairs(units) do
 		self.Health.value:Point("RIGHT", self.Health, "RIGHT", -5, 0)
 		self.Health.PostUpdate = T.CyPostUpdateHealth
 		
+		-- name
 		self.Name:ClearAllPoints()
 		self.Name:SetFont(uffont, fs-1, "THINOUTLINE")
 		self.Name:SetPoint("LEFT", self.Health, "LEFT", 5, 0)
-		self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:nameshort]')
+		self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:cynametiny]')
 	end
 	
 	-- pet frame
@@ -561,7 +560,7 @@ for _, frame in pairs(units) do
 		self.Name:ClearAllPoints()
 		self.Name:SetFont(uffont, fs-1, "THINOUTLINE")
 		self.Name:SetPoint("LEFT", self.Health, "LEFT", 5, 0)
-		--self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:nameshort]')
+		self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:cynametiny]')
 		
 		-- castbar
 		if C.unitframes.unitcastbar == true then
@@ -606,7 +605,7 @@ for _, frame in pairs(units) do
 		self.Name:ClearAllPoints()
 		self.Name:SetFont(font, fs, "THINOUTLINE")
 		self.Name:SetPoint("CENTER", self.Health, "CENTER", 0, 0)
-		self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:nameshort]')
+		self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:cynamesmall]')
 		
 		-- castbar
 		if C.unitframes.unitcastbar == true then
@@ -678,7 +677,7 @@ for _, frame in pairs(units) do
 		self.Name:ClearAllPoints()
 		self.Name:SetFont(font, fs, "THINOUTLINE")
 		self.Name:SetPoint("CENTER", self.Health, "CENTER", 0, 0)
-		self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:nameshort]')
+		self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:cynamesmall]')
 		
 		-- debuffs
 		self.Debuffs:ClearAllPoints()
@@ -766,7 +765,7 @@ for _, frame in pairs(units) do
 			
 			-- name
 			self.Name:SetFont(font, fs, "THINOUTLINE")
-			self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:namemedium]')
+			self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:cynamemedium]')
 			
 			-- debuffs
 			self.Debuffs:ClearAllPoints()
@@ -870,7 +869,7 @@ for _, frame in pairs(units) do
 			
 			-- name
 			self.Name:SetFont(font, fs, "THINOUTLINE")
-			self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:nameshort]')
+			self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:cynamemedium]')
 			
 			-- buffs
 			self.Buffs:ClearAllPoints()

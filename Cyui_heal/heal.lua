@@ -131,6 +131,7 @@ T.PostUpdateRaidUnit = function(self)
 	self.Name:SetPoint("CENTER", self.Health, "CENTER", 0, -6)
 	self.Name:SetShadowOffset(1.25, -1.25)
 	self.Name:SetFont(uffont, fs, "THINOUTLINE")
+	self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:cynametinyraid]')
 	
 	-- leader icon
 	local leader = self.Health:CreateTexture(nil, "OVERLAY")
