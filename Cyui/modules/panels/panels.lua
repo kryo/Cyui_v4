@@ -185,7 +185,7 @@ if C.filger.enable == true then
 	local fplayerproc = CreateFrame("Frame", "FilgerPlayerProcMover", UIParent)
 	fplayerproc:SetTemplate("Default")
 	fplayerproc:Size(C.filger.normaliconsize*3, C.filger.normaliconsize)
-	fplayerproc:Point("RIGHT", UIParent, "CENTER", -200, C.filger.normaliconsize+5)
+	fplayerproc:Point("RIGHT", UIParent, "CENTER", -200, C.filger.normaliconsize+10)
 	fplayerproc:SetMovable(true)
 	fplayerproc:SetClampedToScreen(true)
 	fplayerproc:SetFrameStrata("HIGH")
@@ -215,7 +215,7 @@ if C.filger.enable == true then
 	local fplayerdebuff = CreateFrame("Frame", "FilgerPlayerDebuffMover", UIParent)
 	fplayerdebuff:SetTemplate("Default")
 	fplayerdebuff:Size(C.filger.normaliconsize*3, C.filger.normaliconsize)
-	fplayerdebuff:Point("RIGHT", UIParent, "CENTER", -200, -(C.filger.normaliconsize-5))
+	fplayerdebuff:Point("RIGHT", UIParent, "CENTER", -200, -(C.filger.normaliconsize+10))
 	fplayerdebuff:SetMovable(true)
 	fplayerdebuff:SetClampedToScreen(true)
 	fplayerdebuff:SetFrameStrata("HIGH")
@@ -225,21 +225,6 @@ if C.filger.enable == true then
 	fplayerdebuff.Text:SetText("Player Debuffs")
 	fplayerdebuff:Hide()
 	tinsert(T.AllowFrameMoving, fplayerdebuff)
-	
-	-- target procs
-	local ftargetproc = CreateFrame("Frame", "FilgerTargetProcMover", UIParent)
-	ftargetproc:SetTemplate("Default")
-	ftargetproc:Size(C.filger.normaliconsize*3, C.filger.normaliconsize)
-	ftargetproc:Point("LEFT", UIParent, "CENTER", 200, C.filger.normaliconsize+5)
-	ftargetproc:SetMovable(true)
-	ftargetproc:SetClampedToScreen(true)
-	ftargetproc:SetFrameStrata("HIGH")
-	ftargetproc:SetBackdropBorderColor(1,0,0)
-	ftargetproc:FontString("Text", C.media.font, 12)
-	ftargetproc.Text:SetPoint("CENTER", FilgerTargetProcMover, "CENTER", 0, 0)
-	ftargetproc.Text:SetText("Target Procs")
-	ftargetproc:Hide()
-	tinsert(T.AllowFrameMoving, ftargetproc)
 	
 	-- target buffs
 	local ftargetbuff = CreateFrame("Frame", "FilgerTargetBuffMover", UIParent)
@@ -260,7 +245,7 @@ if C.filger.enable == true then
 	local ftargetdebuff = CreateFrame("Frame", "FilgerTargetDebuffMover", UIParent)
 	ftargetdebuff:SetTemplate("Default")
 	ftargetdebuff:Size(C.filger.normaliconsize*3, C.filger.normaliconsize)
-	ftargetdebuff:Point("LEFT", UIParent, "CENTER", 200, -(C.filger.normaliconsize-5))
+	ftargetdebuff:Point("LEFT", UIParent, "CENTER", 200, -(C.filger.normaliconsize+10))
 	ftargetdebuff:SetMovable(true)
 	ftargetdebuff:SetClampedToScreen(true)
 	ftargetdebuff:SetFrameStrata("HIGH")
@@ -271,11 +256,11 @@ if C.filger.enable == true then
 	ftargetdebuff:Hide()
 	tinsert(T.AllowFrameMoving, ftargetdebuff)
 	
-	-- target debuffs
+	-- misc buffs
 	local fmisc = CreateFrame("Frame", "FilgerMiscMover", UIParent)
 	fmisc:SetTemplate("Default")
 	fmisc:Size(C.filger.misciconsize*3, C.filger.misciconsize)
-	fmisc:Point("CENTER", UIParent, "CENTER", 0, C.filger.misciconsize*3)
+	fmisc:Point("CENTER", UIParent, "CENTER", C.filger.misciconsize*3, 0)
 	fmisc:SetMovable(true)
 	fmisc:SetClampedToScreen(true)
 	fmisc:SetFrameStrata("HIGH")

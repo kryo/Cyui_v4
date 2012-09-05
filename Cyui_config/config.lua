@@ -74,8 +74,15 @@ C.classtimer = {
 
 C.filger = {
 	enable = true,
-	normaliconsize = 35,
+	configmode = false,
+	normaliconsize = 36,
 	misciconsize = 28,
+	playerprocdirection = "LEFT",
+	playerbuffdirection = "LEFT",
+	playerdebuffdirection = "LEFT",
+	targetbuffdirection = "RIGHT",
+	targetdebuffdirection = "RIGHT",
+	miscbuffs = "CENTER",
 }
 
 C.actionbar = {
@@ -139,11 +146,12 @@ C.chat = {
 }
 
 C.nameplate = {
-	enhancethreat = true,
+	enhancethreat = false,
 }
 
 C.tooltip = {
 	rightpanel = true,
+	spellid = true,
 }
 
 C.utilities = {

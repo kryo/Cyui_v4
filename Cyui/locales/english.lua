@@ -48,8 +48,15 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	-- filger
 	TukuiConfigUILocalization.filger = "Filger"
 	TukuiConfigUILocalization.filgerenable = "Enable Filger"
+	TukuiConfigUILocalization.filgerconfigmode = "Display placeholder buffs to help position the icons"
 	TukuiConfigUILocalization.filgernormaliconsize = "Icon size"
 	TukuiConfigUILocalization.filgermisciconsize = "Icon size for special buffs"
+	TukuiConfigUILocalization.filgerplayerprocdirection = "Icon direction for Player procs"
+	TukuiConfigUILocalization.filgerplayerbuffdirection = "Icon direction for Player buffs"
+	TukuiConfigUILocalization.filgerplayerdebuffdirection = "Icon direction for Player debuffs"
+	TukuiConfigUILocalization.filgertargetbuffdirection = "Icon direction for Target buffs"
+	TukuiConfigUILocalization.filgertargetdebuffdirection = "Icon direction for Target debuffs"
+	TukuiConfigUILocalization.filgermiscbuffs = "Icon direction for special buffs (potions, bloodlust, etc)"
 	
 	-- actionbar
 	TukuiConfigUILocalization.actionbarpetmouseover = "Enable pet bar on mouseover"
@@ -68,6 +75,7 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	
 	-- tooltip
 	TukuiConfigUILocalization.tooltiprightpanel = "Parent tooltip to Recount/Skada window (right side of the screen)"
+	TukuiConfigUILocalization.tooltipspellid = "Display the icon spellID when mouseovering it"
 	
 	-- utilities
 	TukuiConfigUILocalization.utilities = "Miscellaneous"
