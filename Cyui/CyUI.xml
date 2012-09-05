@@ -38,10 +38,12 @@
 	<Script file="modules\misc\altpowerbar.lua"/>
 	<Script file="modules\misc\screenie.lua"/>
 	<Script file="modules\misc\threatbar.lua"/>
+	<Script file="modules\misc\raidutilities.lua"/>
 	
 	<Script file="modules\panels\panels.lua"/>
 	
 	<Script file="modules\tooltip\tooltip.lua"/>
+	<Script file="modules\tooltip\spellid.lua"/>
 	
 	<Include file="modules\unitframes\load_unitframes.xml"/>
 	<Include file="modules\filger\load_filger.xml"/>
