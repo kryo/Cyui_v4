@@ -1,13 +1,15 @@
 local T, C, L, G = unpack(Tukui)
 
---local mm = C.ufsize.minimapsize
+local mm = C.ufsize.minimapsize
 local font = C.media.font
 local ps = T.Scale(C.datatext.panelsize)
 
 -- minimap
 G.Maps.Minimap:ClearAllPoints()
---G.Maps.Minimap:Size(mm)
+G.Maps.Minimap:Size(mm)
 G.Maps.Minimap:Point("TOPRIGHT", UIParent, "TOPRIGHT", -8, -8)
+Minimap:Size(mm)
+TukuiMinimap:Size(mm)
 
 -- coord and zone
 TukuiMinimapZone:ClearAllPoints()

@@ -14,7 +14,7 @@ C.ufsize = {
 	smallhealthheight = 15,
 	smallpowerheight = 4,
 	smallunitframewidth = 90,
-	--minimapsize = 125,
+	minimapsize = 140,
 }
 
 C.unitframes = {
@@ -97,10 +97,6 @@ C.actionbar = {
 	ownwarstancebar = true,
 }
 
-C.bags = {
-	--moveable = true,
-}
-
 C.cooldown = {
 	treshold = 1,
 }
@@ -146,7 +142,7 @@ C.chat = {
 }
 
 C.nameplate = {
-	enhancethreat = false,
+	enhancethreat = true,
 }
 
 C.tooltip = {
@@ -156,18 +152,16 @@ C.tooltip = {
 
 C.utilities = {
 	threatbar = true,
-	--repbar = false,
+	--repbar = false, NYI
 	screenie = true,
-	--buffreminder = true,
-	--buffremindersound = false,
-	--lazyrunner = true,
+	--buffreminder = true, NYI
 }
 
 C.announcement = {
 	interrupt = true,
 	spells = false,
 	down = false,
-	sap = true,
+	--sap = true, NYI
 }
 
 C.media = {

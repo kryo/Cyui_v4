@@ -4,16 +4,16 @@ if not C.auras.player then return end
 
 local buffs = TukuiAurasPlayerBuffs
 local debuffs = TukuiAurasPlayerDebuffs
-local size = G.Maps.Minimap:GetWidth()
+local size = TukuiMinimap:GetWidth()
 
 buffs:ClearAllPoints()
-buffs:SetPoint("TOPRIGHT", UIParent, -(size+15), -8)
+buffs:SetPoint("TOPRIGHT", UIParent, -(size+10), -8)
 buffs:SetAttribute("xOffset", -35)
 buffs:SetAttribute("wrapAfter", 18)
 buffs:SetAttribute("wrapYOffset", -45)
 
 debuffs:ClearAllPoints()
-debuffs:SetPoint("TOPRIGHT", UIParent, -(size+15), -(size-1))
+debuffs:SetPoint("TOPRIGHT", UIParent, -(size+10), -(size-5))
 debuffs:SetAttribute("xOffset", -35)
 debuffs:SetAttribute("wrapAfter", 18)
 debuffs:SetAttribute("wrapYOffset", -45)
