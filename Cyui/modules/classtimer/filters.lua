@@ -326,7 +326,7 @@ CLASS_FILTERS = {
 			CreateSpellEntry(37506),		-- Scatter Shot
 			CreateSpellEntry(88691),		-- Marker for death
 			CreateSpellEntry(1130, true),	-- Hunters mark
-			CreateSpellEntry(1978),			-- Serpent sting
+			CreateSpellEntry(118253),		-- Serpent sting
 			CreateSpellEntry(90337),		-- Bad Manner
 			CreateSpellEntry(53301),		-- Explosive Shot
 			CreateSpellEntry(13809),		-- Ice Trap
