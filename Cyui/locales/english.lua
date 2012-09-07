@@ -22,7 +22,7 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	TukuiConfigUILocalization.ufsizesmallhealthheight = "Health bar height (for Target, ToT, Pet frames)"
 	TukuiConfigUILocalization.ufsizesmallpowerheight = "Power bar height (for Target, ToT, Pet frames)"
 	TukuiConfigUILocalization.ufsizesmallunitframewidth = "Unitframe width (for Target, ToT, Pet frames)"
-	--TukuiConfigUILocalization.ufsizeminimapsize = "Minimap size"
+	TukuiConfigUILocalization.ufsizeminimapsize = "Minimap size"
 	
 	-- unitframes
 	TukuiConfigUILocalization.unitframeseclipsetext = "Display Eclipse text on unitframe"
@@ -90,4 +90,5 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	TukuiConfigUILocalization.announcementspells = "Announce important cooldowns to party or raid chat"
 	TukuiConfigUILocalization.announcementsap = "Announce when sapped"
 	TukuiConfigUILocalization.announcementdown = "Announce when cooldowns are over (not recommended)"
+	TukuiConfigUILocalization.announcementbg = "Announce interrupts to battlegrounds"
 end
