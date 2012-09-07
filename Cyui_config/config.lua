@@ -28,7 +28,7 @@ C.unitframes = {
 	targetauras = true,
 	-- unitframes
 	charportrait = false,
-	classicon = false,
+	classicon = true,
 	combatfeedback = false,
 	-- classbar
 	classbar = true,
@@ -39,7 +39,6 @@ C.unitframes = {
 	druidmushroombar = true,
 	-- raidframes
 	healcomm = true,
-	gridonly = true,
 	showplayerinparty = true,
 	gridhealthvertical = false,
 	showrange = true,
@@ -49,7 +48,6 @@ C.unitframes = {
 }
 
 C.auras = {
-	consolidate = false,
 	flash = true,
 	classictimer = true,
 }
@@ -159,6 +157,7 @@ C.utilities = {
 
 C.announcement = {
 	interrupt = true,
+	bg = false,
 	spells = false,
 	down = false,
 	--sap = true, NYI
