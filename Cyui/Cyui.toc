@@ -1,10 +1,10 @@
 ## Interface: 50001
 ## Author: Kryo
-## Version: 4.2
+## Version: 4.3
 ## Title: |cffDC143CCyui|r
 ## Notes: Needs original Tukui to run! Edited version of Tukui.
 ## RequiredDeps: CyUI_Config, Tukui
-## OptionalDeps: Blizzard_CombatText, !ClassColors, Clique, Omen, Recount, Skada, TinyDPS
+## OptionalDeps: Blizzard_CombatText, !ClassColors, Clique
 ## X-oUF: oUFTukui
 
 Cyui.xml
