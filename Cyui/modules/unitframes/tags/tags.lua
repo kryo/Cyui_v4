@@ -36,19 +36,19 @@ end
 oUF.Tags.Events['Tukui:cynamelong'] = 'UNIT_NAME_UPDATE'
 oUF.Tags.Methods['Tukui:cynamelong'] = function(unit)
 	local name = UnitName(unit)
-	return utf8sub(name, 18, false)
+	return utf8sub(name, 15, false)
 end
 
 oUF.Tags.Events['Tukui:cynamemedium'] = 'UNIT_NAME_UPDATE'
 oUF.Tags.Methods['Tukui:cynamemedium'] = function(unit)
 	local name = UnitName(unit)
-	return utf8sub(name, 14, false)
+	return utf8sub(name, 12, false)
 end
 
 oUF.Tags.Events['Tukui:cynamesmall'] = 'UNIT_NAME_UPDATE'
 oUF.Tags.Methods['Tukui:cynamesmall'] = function(unit)
 	local name = UnitName(unit)
-	return utf8sub(name, 11, false)
+	return utf8sub(name, 10, false)
 end
 
 oUF.Tags.Events['Tukui:cynametiny'] = 'UNIT_NAME_UPDATE'
@@ -57,12 +57,22 @@ oUF.Tags.Methods['Tukui:cynametiny'] = function(unit)
 	return utf8sub(name, 7, false)
 end
 
-oUF.Tags.Events['Tukui:cynametinyraid'] = 'UNIT_NAME_UPDATE PARTY_LEADER_CHANGED GROUP_ROSTER_UPDATE'
-oUF.Tags.Methods['Tukui:cynametinyraid'] = function(unit)
+oUF.Tags.Events['Tukui:cyhealraid'] = 'UNIT_NAME_UPDATE PARTY_LEADER_CHANGED GROUP_ROSTER_UPDATE'
+oUF.Tags.Methods['Tukui:cyhealraid'] = function(unit)
 	local name = UnitName(unit)
 	local isLeader = UnitIsGroupLeader(unit)
 	local isAssistant = UnitIsGroupAssistant(unit) or UnitIsRaidOfficer(unit)
 	local assist, lead = "", ""
-	if isAssistant then assist = "|A| " elseif isLeader then lead = "|L| " end
-	return utf8sub(lead..assist..name, 7, false)
+	if isAssistant then assist = "(A)" elseif isLeader then lead = "(L)" end
+	return utf8sub(lead..assist..name, 8, false)
+end
+
+oUF.Tags.Events['Tukui:cyraid'] = 'UNIT_NAME_UPDATE PARTY_LEADER_CHANGED GROUP_ROSTER_UPDATE'
+oUF.Tags.Methods['Tukui:cyraid'] = function(unit)
+	local name = UnitName(unit)
+	local isLeader = UnitIsGroupLeader(unit)
+	local isAssistant = UnitIsGroupAssistant(unit) or UnitIsRaidOfficer(unit)
+	local assist, lead = "", ""
+	if isAssistant then assist = "(A)" elseif isLeader then lead = "(L)" end
+	return utf8sub(lead..assist..name, 12, false)
 end
