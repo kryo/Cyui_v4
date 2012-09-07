@@ -2,11 +2,23 @@ local T, C, L, G = unpack(Tukui)
 
 if not C.chat.enable then return end
 
+-- tell spec
+-- local SpecChange = CreateFrame("Frame")
+-- local OnEvent = function(self, event, ...)
+	-- if event == "ACTIVE_TALENT_GROUP_CHANGED" then
+		-- local specId = GetSpecialization(false, false, group)
+		-- _, spec, _, icon = GetSpecializationInfo(specId, false, false)
+		-- print(T.RGBToHex(unpack(C.media.datatextcolor2)).."Switched to |T"..icon..":0|t "..spec.." spec.|r")
+	-- end
+-- end
+-- SpecChange:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
+-- SpecChange:SetScript("OnEvent", OnEvent)
+
 -- remove spam from new spell and talent switch
 function T.SPELL_FILTER(self, event, arg1)
     if strfind(arg1,"You have unlearned") or strfind(arg1,"You have learned a new") or strfind(arg1,"Your pet has unlearned") or strfind(arg1, "Your pet has learned") then
 		return true
-    end
+	end
 end
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", T.SPELL_FILTER)
 

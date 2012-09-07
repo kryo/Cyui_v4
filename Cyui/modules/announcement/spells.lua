@@ -5,10 +5,10 @@ if not C.announcement.spells then return end
 
 -- Channel output
 local Channel
-if GetNumGroupMembers() > 0 then
-	Channel = "PARTY"
-elseif (GetNumSubgroupMembers() > 0 and not UnitInRaid("player")) then
+if IsInRaid() then
 	Channel = "RAID"
+elseif IsInGroup() then
+	Channel = "PARTY"
 else
 	return
 end
@@ -94,4 +94,4 @@ end
 
 local AnnounceFrame = CreateFrame("Frame")
 AnnounceFrame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-AnnounceFrame:SetScript("OnEvent", OnEvent) --]]
+AnnounceFrame:SetScript("OnEvent", OnEvent)
