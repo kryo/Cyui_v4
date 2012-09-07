@@ -43,8 +43,8 @@ C.unitframes = {
 	showplayerinparty = true,
 	gridhealthvertical = false,
 	showrange = true,
-	maintank = false,
-	mainassist = false,
+	maintank = false, -- NYI
+	mainassist = false, -- NYI
 	showraidpets = false, -- NYI
 }
 
@@ -73,7 +73,7 @@ C.classtimer = {
 }
 
 C.filger = {
-	enable = true,
+	enable = false,
 	configmode = false,
 	normaliconsize = 36,
 	misciconsize = 28,
@@ -146,14 +146,14 @@ C.nameplate = {
 }
 
 C.tooltip = {
-	rightpanel = true,
-	spellid = true,
+	rightpanel = false,
+	spellid = false,
 }
 
 C.utilities = {
 	threatbar = true,
-	--repbar = false, NYI
 	screenie = true,
+	--repbar = false, NYI
 	--buffreminder = true, NYI
 }
 
