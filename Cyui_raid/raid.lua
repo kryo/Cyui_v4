@@ -1,8 +1,8 @@
 local T, C, L, G = unpack(Tukui)
 
-if not C.unitframes.enable == true then return end
+if not C.unitframes.enable and not C.unitframes.raid then return end
 
-C["unitframes"].raidunitdebuffwatch = false
+C.unitframes.raidunitdebuffwatch = false
 
 local bgcolor, normTex, blank, uffont, font, fs, point, columnAnchorPoint, width, height, showParty, showRaid, showPlayer, xOffset, yOffset, columnSpacing, solo
 width = T.Scale(90*C["unitframes"].gridscale*T.raidscale)
@@ -106,6 +106,7 @@ T.PostUpdateRaidUnit = function(self)
 	self.Name:SetParent(self.Health)
 	self.Name:SetPoint("LEFT", self.Health, "LEFT", 10, 1)
 	self.Name:SetFont(uffont, fs, "THINOUTLINE")
+	self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:cyraid]')
 	
 	-- leader icon
 	local leader = self.Health:CreateTexture(nil, "OVERLAY")

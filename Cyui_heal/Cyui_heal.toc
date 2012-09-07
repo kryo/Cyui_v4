@@ -1,6 +1,6 @@
 ## Interface: 50001
 ## Author: Kryo
 ## Title: |cffDC143CCyui|r Healer layout
-## RequiredDeps: Tukui, Cyui
+## RequiredDeps: Cyui
 
 heal.lua

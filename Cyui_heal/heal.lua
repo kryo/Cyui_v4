@@ -1,27 +1,46 @@
 local T, C, L, G = unpack(Tukui)
 
-if not C.unitframes.enable == true then return end
-
-C.unitframes.gridhealthvertical = true
+if not C.unitframes.enable and not C.unitframes.raid then return end
 
 local bgcolor, normTex, blank, uffont, font, fs, point, columnAnchorPoint, width, height, showParty, showRaid, showPlayer, xOffset, yOffset, columnSpacing, solo
-width = T.Scale(58*C["unitframes"].gridscale*T.raidscale)
-height = T.Scale(32*C["unitframes"].gridscale*T.raidscale)
-showParty = true
-showRaid = true
-showPlayer = C.unitframes.showplayerinparty
-xOffset = T.Scale(7)
-yOffset = T.Scale(0)
-point = "LEFT"
-columnSpacing = T.Scale(7)
-columnAnchorPoint = "TOP"
-bgcolor = C.general.backgroundcolor
-normTex = C.media.normTex
-blank = C.media.blank
-uffont = C.media.uffont
-font = C.media.font
-fs = 10*C["unitframes"].gridscale*T.raidscale
-solo = false -- coding only
+
+if C.unitframes.gridhealthvertical then
+	width = T.Scale(58*C["unitframes"].gridscale*T.raidscale)
+	height = T.Scale(32*C["unitframes"].gridscale*T.raidscale)
+	showParty = true
+	showRaid = true
+	showPlayer = C.unitframes.showplayerinparty
+	xOffset = T.Scale(7)
+	yOffset = T.Scale(0)
+	point = "LEFT"
+	columnSpacing = T.Scale(7)
+	columnAnchorPoint = "TOP"
+	bgcolor = C.general.backgroundcolor
+	normTex = C.media.normTex
+	blank = C.media.blank
+	uffont = C.media.uffont
+	font = C.media.font
+	fs = 10*C["unitframes"].gridscale*T.raidscale
+	solo = false -- coding only
+else
+	width = T.Scale(62*C["unitframes"].gridscale*T.raidscale)
+	height = T.Scale(32*C["unitframes"].gridscale*T.raidscale)
+	showParty = true
+	showRaid = true
+	showPlayer = C.unitframes.showplayerinparty
+	xOffset = T.Scale(7)
+	yOffset = T.Scale(0)
+	point = "LEFT"
+	columnSpacing = T.Scale(7)
+	columnAnchorPoint = "TOP"
+	bgcolor = C.general.backgroundcolor
+	normTex = C.media.normTex
+	blank = C.media.blank
+	uffont = C.media.uffont
+	font = C.media.font
+	fs = 10*C["unitframes"].gridscale*T.raidscale
+	solo = false -- coding only
+end
 	
 T.RaidFrameAttributes = function()
 	return
@@ -131,7 +150,7 @@ T.PostUpdateRaidUnit = function(self)
 	self.Name:SetPoint("CENTER", self.Health, "CENTER", 0, -6)
 	self.Name:SetShadowOffset(1.25, -1.25)
 	self.Name:SetFont(uffont, fs, "THINOUTLINE")
-	self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:cynametinyraid]')
+	self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:cyhealraid]')
 	
 	-- leader icon
 	local leader = self.Health:CreateTexture(nil, "OVERLAY")
@@ -179,8 +198,8 @@ T.PostUpdateRaidUnit = function(self)
 		self.RaidDebuffs:Kill()
 		
 		local RaidDebuffs = CreateFrame('Frame', nil, self)
-		RaidDebuffs:Height(24*C["unitframes"].gridscale)
-		RaidDebuffs:Width(24*C["unitframes"].gridscale)
+		RaidDebuffs:Height(21*C["unitframes"].gridscale)
+		RaidDebuffs:Width(21*C["unitframes"].gridscale)
 		RaidDebuffs:Point("CENTER", self.Health, 1, 0)
 		RaidDebuffs:SetFrameStrata(self.Health:GetFrameStrata())
 		RaidDebuffs:SetFrameLevel(self.Health:GetFrameLevel() + 2)
@@ -204,25 +223,22 @@ T.PostUpdateRaidUnit = function(self)
 		self.RaidDebuffs = RaidDebuffs
 	end
 	
-	-- if C["unitframes"].healcomm == true then
+	-- if C.unitframes.healcomm and C.unitframes.gridhealthvertical then
 		-- local mhpb = CreateFrame("StatusBar", nil, self.Health)
-		-- mhpb:SetParent(self.Health)
 		-- mhpb:SetOrientation("VERTICAL")
 		-- mhpb:SetPoint("BOTTOM", self.Health:GetStatusBarTexture(), "TOP", 0, 0)
-		-- mhpb:SetWidth(self.Health:GetWidth()-5)
-		-- mhpb:SetHeight(self.Health:GetHeight()-5)
-		-- mhpb:SetStatusBarTexture(C.media.normTex)
+		-- mhpb:SetWidth(width-4)
+		-- mhpb:SetHeight(height-4)
+		-- mhpb:SetStatusBarTexture(normTex)
 		-- mhpb:SetStatusBarColor(0, 1, 0.5, 0.25)
 		
 		-- local ohpb = CreateFrame("StatusBar", nil, self.Health)
-		-- ohpb:SetParent(self.Health)
 		-- ohpb:SetOrientation("VERTICAL")
 		-- ohpb:SetPoint("BOTTOM", mhpb:GetStatusBarTexture(), "TOP", 0, 0)
-		-- ohpb:SetWidth(self.Health:GetWidth()-5)
-		-- ohpb:SetHeight(self.Health:GetHeight()-5)
-		-- ohpb:SetStatusBarTexture(C.media.normTex)
+		-- ohpb:SetWidth(width-4)
+		-- ohpb:SetStatusBarTexture(normTex)
 		-- ohpb:SetStatusBarColor(0, 1, 0, 0.25)
-		
+
 		-- self.HealPrediction = {
 			-- myBar = mhpb,
 			-- otherBar = ohpb,
