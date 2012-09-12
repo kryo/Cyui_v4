@@ -361,6 +361,7 @@ for _, frame in pairs(units) do
 			
 			-- death knight
 			if T.myclass == "DEATHKNIGHT" then
+				-- runes
 				self.Runes:ClearAllPoints()
 				self.Runes:SetPoint("BOTTOMLEFT", self.Health, "TOPLEFT", 0, 5)
 				
@@ -384,6 +385,15 @@ for _, frame in pairs(units) do
 						self.Runes[i]:SetPoint("TOPLEFT", self.Runes[i-1], "TOPRIGHT", 1, 0)
 					end
 				end
+				
+				-- pet timer
+				TukuiStatueBar:ClearAllPoints()
+				TukuiStatueBar:SetParent(self.Power)
+				TukuiStatueBar:SetAllPoints(self.Power)
+				TukuiStatueBar:SetWidth(UFwidth)
+				TukuiStatueBar:SetHeight(PWRheight)
+				TukuiStatueBar:SetScript("OnShow", function(self) end)
+				TukuiStatueBar:SetScript("OnHide", function(self) end)
 			end
 			
 			-- monk
