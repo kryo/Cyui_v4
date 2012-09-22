@@ -1,6 +1,6 @@
 local T, C, L, G = unpack(Tukui)
 
-if not C.unitframes.enable then return end
+if C.unitframes.altlayout or not C.unitframes.enable then return end
 
 -- local variables
 local HPheight, PWRheight, UFwidth, UFheight, sHPheight, sPWRheight, sUFwidth, sUFheight, bgcolor, normTex, uffont, font, fs, player, target, tot, pet, focus, focustar
@@ -392,8 +392,12 @@ for _, frame in pairs(units) do
 				TukuiStatueBar:SetAllPoints(self.Power)
 				TukuiStatueBar:SetWidth(UFwidth)
 				TukuiStatueBar:SetHeight(PWRheight)
+				TukuiStatueBar:SetStatusBarColor(.37, .61, .62)
 				TukuiStatueBar:SetScript("OnShow", function(self) end)
 				TukuiStatueBar:SetScript("OnHide", function(self) end)
+				
+				TukuiStatue:SetAllPoints(self.Power)
+				TukuiStatue:SetFrameLevel(TukuiStatueBar:GetFrameLevel()-1)
 			end
 			
 			-- monk
@@ -585,16 +589,16 @@ for _, frame in pairs(units) do
 		self:ClearAllPoints()
 		
 		-- size
-		self:Height(24)
-		self:Width(175)
+		self:Height(UFheight)
+		self:Width(UFwidth)
 		
 		-- healthbar
-		self.Health:SetHeight(18)
+		self.Health:SetHeight(HPheight)
 		self.Health:CreateBorder()
 		
 		-- powerbar
 		self.Power:ClearAllPoints()
-		self.Power:SetHeight(3)
+		self.Power:SetHeight(PWRheight)
 		self.Power:Point("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -3)
 		self.Power:Point("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -3)
 		self.Power:CreateBorder()
@@ -617,36 +621,34 @@ for _, frame in pairs(units) do
 		self.Name:SetPoint("CENTER", self.Health, "CENTER", 0, 0)
 		self:Tag(self.Name, '[Tukui:getnamecolor][Tukui:cynamesmall]')
 		
+		-- debuffs
+		self.Debuffs:SetHeight(UFheight+6)
+		self.Debuffs.size = UFheight+6
+		self.Debuffs.num = 2
+		self.Debuffs.PostCreateIcon = T.CyPostCreateAura
+		
 		-- castbar
 		if C.unitframes.unitcastbar == true then
 			self.Castbar:ClearAllPoints()
-			self.Castbar.time:ClearAllPoints()
-			self.Castbar.Text:ClearAllPoints()
-			self.Castbar.button:ClearAllPoints()
-			self.Castbar.icon:ClearAllPoints()
-			self.shadow:Kill()
-			
+			self.Castbar:SetPoint("TOP", self.Power, "BOTTOM", 0, -7)
 			self.Castbar:SetHeight(T.Scale(HPheight*.7))
-			self.Castbar:SetWidth(self.Health:GetWidth())
-			self.Castbar:SetPoint("TOPLEFT", self.Power, "BOTTOMLEFT", 0, -7)
-			self.Castbar:CreateBorder()
+			self.Castbar:SetWidth(UFwidth)
 			
-			self.Castbar.bg:Point("TOPLEFT", 0, 0)
-			self.Castbar.bg:Point("BOTTOMRIGHT", 0, 0)
-			self.Castbar.bg:SetBackdropBorderColor(bdcr, bdcg, bdcb)
-			
-			self.Castbar.time:SetFont(font, fs-2)
+			self.Castbar.time:ClearAllPoints()
+			self.Castbar.time:SetFont(font, fs-1)
 			self.Castbar.time:SetPoint("RIGHT", self.Castbar, "RIGHT", -5, 0)
 			
+			self.Castbar.Text:ClearAllPoints()
 			self.Castbar.Text:SetFont(font, fs-1)
 			self.Castbar.Text:SetPoint("LEFT", self.Castbar, "LEFT", 5, 0)
 			
+			self.Castbar.button:ClearAllPoints()
 			self.Castbar.button:SetHeight(self.Castbar:GetHeight())
 			self.Castbar.button:SetWidth(self.Castbar:GetHeight())
 			self.Castbar.button:SetPoint("RIGHT", self.Castbar, "LEFT", -7, 0)
-			self.Castbar.button:SetBackdropBorderColor(bdcr, bdcg, bdcb)
 			self.Castbar.button:CreateBorder()
 			
+			self.Castbar.icon:ClearAllPoints()
 			self.Castbar.icon:Point("TOPLEFT", self.Castbar.button, 0, 0)
 			self.Castbar.icon:Point("BOTTOMRIGHT", self.Castbar.button, 0, 0)
 		end
@@ -657,16 +659,16 @@ for _, frame in pairs(units) do
 		self:ClearAllPoints()
 		
 		-- size
-		self:Height(24)
-		self:Width(175)
+		self:Height(UFheight)
+		self:Width(UFwidth)
 		
 		-- healthbar
-		self.Health:SetHeight(18)
+		self.Health:SetHeight(HPheight)
 		self.Health:CreateBorder()
 		
 		-- powerbar
 		self.Power:ClearAllPoints()
-		self.Power:SetHeight(3)
+		self.Power:SetHeight(PWRheight)
 		self.Power:Point("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -3)
 		self.Power:Point("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -3)
 		self.Power:CreateBorder()
@@ -691,41 +693,34 @@ for _, frame in pairs(units) do
 		
 		-- debuffs
 		self.Debuffs:ClearAllPoints()
-		self.Debuffs:SetHeight(HPheight+PWRheight+1)
 		self.Debuffs:SetPoint("TOPRIGHT", self, "TOPLEFT", -5, 2)
-		self.Debuffs.size = HPheight+PWRheight+1
+		self.Debuffs:SetHeight(UFheight+6)
+		self.Debuffs.size = UFheight+6
 		self.Debuffs.num = 2
+		self.Debuffs.PostCreateIcon = T.CyPostCreateAura
 		
 		-- castbar
 		if C.unitframes.unitcastbar == true then
 			self.Castbar:ClearAllPoints()
-			self.Castbar.time:ClearAllPoints()
-			self.Castbar.Text:ClearAllPoints()
-			self.Castbar.button:ClearAllPoints()
-			self.Castbar.icon:ClearAllPoints()
-			self.shadow:Kill()
-			
+			self.Castbar:SetPoint("TOP", self.Power, "BOTTOM", 0, -7)
 			self.Castbar:SetHeight(T.Scale(HPheight*.7))
-			self.Castbar:SetWidth(self.Health:GetWidth())
-			self.Castbar:SetPoint("TOPLEFT", self.Power, "BOTTOMLEFT", 0, -7)
-			self.Castbar:CreateBorder()
+			self.Castbar:SetWidth(UFwidth)
 			
-			self.Castbar.bg:Point("TOPLEFT", 0, 0)
-			self.Castbar.bg:Point("BOTTOMRIGHT", 0, 0)
-			self.Castbar.bg:SetBackdropBorderColor(bdcr, bdcg, bdcb)
-			
-			self.Castbar.time:SetFont(font, fs-2)
+			self.Castbar.time:ClearAllPoints()
+			self.Castbar.time:SetFont(font, fs-1)
 			self.Castbar.time:SetPoint("RIGHT", self.Castbar, "RIGHT", -5, 0)
 			
+			self.Castbar.Text:ClearAllPoints()
 			self.Castbar.Text:SetFont(font, fs-1)
 			self.Castbar.Text:SetPoint("LEFT", self.Castbar, "LEFT", 5, 0)
 			
+			self.Castbar.button:ClearAllPoints()
 			self.Castbar.button:SetHeight(self.Castbar:GetHeight())
 			self.Castbar.button:SetWidth(self.Castbar:GetHeight())
 			self.Castbar.button:SetPoint("RIGHT", self.Castbar, "LEFT", -7, 0)
-			self.Castbar.button:SetBackdropBorderColor(bdcr, bdcg, bdcb)
 			self.Castbar.button:CreateBorder()
 			
+			self.Castbar.icon:ClearAllPoints()
 			self.Castbar.icon:Point("TOPLEFT", self.Castbar.button, 0, 0)
 			self.Castbar.icon:Point("BOTTOMRIGHT", self.Castbar.button, 0, 0)
 		end
@@ -736,8 +731,6 @@ for _, frame in pairs(units) do
 		for i = 1, 5 do
 			local self = _G["TukuiArena"..i]
 			self.shadow:Kill()
-			
-			arenaheight = self:GetHeight()+PWRheight+1
 			
 			-- set colors
 			self.Health.bg:SetTexture(1,1,1)
@@ -755,8 +748,8 @@ for _, frame in pairs(units) do
 			self.Health:CreateBorder()
 			
 			-- powerbar
-			self.Power:SetHeight(PWRheight)
 			self.Power:ClearAllPoints()
+			self.Power:SetHeight(3)			
 			self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -3)
 			self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -3)
 			self.Power:CreateBorder()
@@ -779,26 +772,23 @@ for _, frame in pairs(units) do
 			
 			-- debuffs
 			self.Debuffs:ClearAllPoints()
-			self.Debuffs:SetHeight(arenaheight)
-			self.Debuffs:SetPoint("RIGHT", self, "LEFT", -5, 2)
-			self.Debuffs.size = arenaheight
+			self.Debuffs:SetHeight(UFheight+4)
+			self.Debuffs:Point("LEFT", self, "RIGHT", 5, 0)
+			self.Debuffs.size = UFheight+4
 			self.Debuffs.num = 3
-			self.Debuffs.initialAnchor = "RIGHT"
-			self.Debuffs["growth-x"] = "LEFT"
+			self.Debuffs.spacing = 3
+			self.Debuffs.PostCreateIcon = T.CyPostCreateAura
 			
 			-- trinket
 			self.Trinket:ClearAllPoints()
-			self.Trinket:SetBackdrop(nil)
-			self.Trinket:SetWidth(arenaheight)
-			self.Trinket:SetHeight(arenaheight)
-			self.Trinket:SetPoint("LEFT", self, "RIGHT", 7, -1)
+			self.Trinket:Size(UFheight)
+			self.Trinket:SetPoint("RIGHT", self, "LEFT", -7, 0)
 			
-			-- spec icon
-			--[[ self.specIcon:ClearAllPoints()
-			self.specIcon:SetBackdrop(nil)
-			self.specIcon:SetWidth(arenaheight)
-			self.specIcon:SetHeight(arenaheight)
-			self.specIcon:SetPoint("TOPLEFT", self.Trinket, "TOPRIGHT", 5, 0) --]]
+			-- flag
+			self.PVPSpecIcon:ClearAllPoints()
+			self.PVPSpecIcon:Size(UFheight)
+			self.PVPSpecIcon:SetPoint("RIGHT", self, "LEFT", -7, 0)
+			self.PVPSpecIcon.shadow = T.dummy
 			
 			-- castbar
 			if C.unitframes.unitcastbar == true then
@@ -841,8 +831,6 @@ for _, frame in pairs(units) do
 			local self = _G["TukuiBoss"..i]
 			self.shadow:Kill()
 			
-			bossheight = self:GetHeight()+PWRheight+1
-			
 			-- set colors
 			self.Health.bg:SetTexture(1,1,1)
 			
@@ -883,21 +871,25 @@ for _, frame in pairs(units) do
 			
 			-- buffs
 			self.Buffs:ClearAllPoints()
-			self.Buffs:SetHeight(bossheight)
-			self.Buffs:SetPoint("TOPLEFT", self, "TOPRIGHT", 5, 2)
-			self.Buffs.size = bossheight
+			self.Buffs:SetHeight(UFheight+6)
+			self.Buffs:SetPoint("LEFT", self, "RIGHT", 5, -1)
+			self.Buffs.size = UFheight+6
 			self.Buffs.num = 2
+			self.Buffs.spacing = 3
 			self.Buffs.initialAnchor = "LEFT"
 			self.Buffs["growth-x"] = "RIGHT"
+			self.Buffs.PostCreateIcon = T.CyPostCreateAura
 			
 			-- debuffs
 			self.Debuffs:ClearAllPoints()
-			self.Debuffs:SetHeight(bossheight)
-			self.Debuffs:SetPoint("TOPRIGHT", self, "TOPLEFT", -5, 2)
-			self.Debuffs.size = bossheight
+			self.Debuffs:SetHeight(UFheight+6)
+			self.Debuffs:SetPoint("RIGHT", self, "LEFT", -5, -1)
+			self.Debuffs.size = UFheight+6
 			self.Debuffs.num = 3
+			self.Debuffs.spacing = 3
 			self.Debuffs.initialAnchor = "RIGHT"
 			self.Debuffs["growth-x"] = "LEFT"
+			self.Debuffs.PostCreateIcon = T.CyPostCreateAura
 			
 			-- alt power bar
 			self.AltPowerBar:ClearAllPoints()
