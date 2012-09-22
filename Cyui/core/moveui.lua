@@ -6,7 +6,7 @@ TukuiWatchFrameAnchor:Point("TOPRIGHT", UIParent, -110, -175)
 
 -- achievements
 TukuiAchievementHolder:ClearAllPoints()
-TukuiAchievementHolder:SetPoint("CENTER", UIParent, "CENTER", 0, 275)
+TukuiAchievementHolder:SetPoint("CENTER", UIParent, "CENTER", 0, 225)
 
 -- durability
 hooksecurefunc(DurabilityFrame,"SetPoint",function(self,_,parent)
@@ -18,13 +18,17 @@ end)
 
 -- vehicle
 TukuiVehicleAnchor:ClearAllPoints()
-TukuiVehicleAnchor:SetPoint("TOP", UIParent, 0, -150)
+TukuiVehicleAnchor:SetPoint("TOP", UIParent, 0, -100)
 
 -- loot
 if C.loot.lootframe == true then
 	TukuiRollAnchor:ClearAllPoints()
-	TukuiRollAnchor:SetPoint("TOP", UIParent, "TOP", 0, -300)
+	TukuiRollAnchor:SetPoint("CENTER", UIParent, "CENTER", 0, 50)
 end
+
+-- ticket frame
+TicketStatusFrame:ClearAllPoints()
+TicketStatusFrame:SetPoint("TOPLEFT", UIParent, "TOPLEFT", 5, -5)
 
 -- menu
 GameMenuFrame:SetMovable(true)
