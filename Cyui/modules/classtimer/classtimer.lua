@@ -658,7 +658,7 @@ local function OnUnitFramesLoad(self, event, addon)
 				playerFrame:SetPoint("BOTTOMLEFT", TukuiPlayer, "TOPLEFT", 0, yOffset+pwrh+5)
 				playerFrame:SetPoint("BOTTOMRIGHT", TukuiPlayer, "TOPRIGHT", 0, yOffset+pwrh+5)
 			end
-		elseif (playerClass == "DEATHKNIGHT" or playerClass == "SHAMAN" or playerClass == "PALADIN" or playerClass == "DRUID" or playerClass == "WARLOCK" or playerClass == "MONK" or playerClass == "MAGE") then
+		elseif (playerClass == "DEATHKNIGHT" or playerClass == "SHAMAN" or playerClass == "PALADIN" or playerClass == "DRUID" or playerClass == "WARLOCK" or playerClass == "MONK" or playerClass == "MAGE" or playerClass == "PRIEST") then
 			playerFrame:SetPoint("BOTTOMLEFT", TukuiPlayer, "TOPLEFT", 0, yOffset+pwrh+5)
 			playerFrame:SetPoint("BOTTOMRIGHT", TukuiPlayer, "TOPRIGHT", 0, yOffset+pwrh+5)
 		else
@@ -707,7 +707,7 @@ local function OnUnitFramesLoad(self, event, addon)
 				playerFrame:SetPoint("BOTTOMLEFT", TukuiPlayer, "TOPLEFT", 0, yOffset+pwrh+5)
 				playerFrame:SetPoint("BOTTOMRIGHT", TukuiPlayer, "TOPRIGHT", 0, yOffset+pwrh+5)
 			end
-		elseif (playerClass == "DEATHKNIGHT" or playerClass == "SHAMAN" or playerClass == "PALADIN" or playerClass == "DRUID" or playerClass == "WARLOCK" or playerClass == "MONK" or playerClass == "MAGE") then
+		elseif (playerClass == "DEATHKNIGHT" or playerClass == "SHAMAN" or playerClass == "PALADIN" or playerClass == "DRUID" or playerClass == "WARLOCK" or playerClass == "MONK" or playerClass == "MAGE" or playerClass == "PRIEST") then
 			playerFrame:SetPoint("BOTTOMLEFT", TukuiPlayer, "TOPLEFT", 0, yOffset+pwrh+5)
 			playerFrame:SetPoint("BOTTOMRIGHT", TukuiPlayer, "TOPRIGHT", 0, yOffset+pwrh+5)
 		else
