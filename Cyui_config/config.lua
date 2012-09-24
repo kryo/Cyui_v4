@@ -27,6 +27,7 @@ C.unitframes = {
 	totdebuffs = true,
 	targetauras = true,
 	-- unitframes
+	--altlayout = true,
 	charportrait = false,
 	classicon = true,
 	combatfeedback = false,
@@ -152,7 +153,7 @@ C.utilities = {
 	threatbar = true,
 	screenie = true,
 	--repbar = false, NYI
-	--buffreminder = true, NYI
+	buffreminder = true,
 }
 
 C.announcement = {
@@ -167,6 +168,7 @@ C.media = {
 	uffont = [[Interface\Addons\CyUI\media\fonts\expresswayfree.ttf]],
 	font = [[Interface\Addons\CyUI\media\fonts\ptsansnarrow.ttf]],
 	dmgfont = [[Interface\AddOns\CyUI\media\fonts\ptsansnarrow.ttf]],
+	pxfont = [[Interface\AddOns\CyUI\media\fonts\visitor.ttf]],
 	datatextcolor1 = {.9,.9,.9},
 	datatextcolor2 = {.95,.20,.20},
 }

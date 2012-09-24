@@ -81,7 +81,7 @@ if IsAddOnLoaded("Tukui_ConfigUI") then
 	TukuiConfigUILocalization.utilities = "Miscellaneous"
 	TukuiConfigUILocalization.utilitiesthreatbar = "Enable threat bar on right panel"
 	TukuiConfigUILocalization.utilitiesscreenie = "Take a screenshot on every achievement earned"
-	TukuiConfigUILocalization.utilitiesbuffreminder = "Buff reminder"
+	TukuiConfigUILocalization.utilitiesbuffreminder = "Simple buff reminder"
 	TukuiConfigUILocalization.utilitiesbuffremindersound = "Plays a sound for buff reminder"
 	
 	-- announce

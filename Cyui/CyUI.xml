@@ -39,6 +39,7 @@
 	<Script file="modules\misc\screenie.lua"/>
 	<Script file="modules\misc\threatbar.lua"/>
 	<Script file="modules\misc\raidutilities.lua"/>
+	<Script file="modules\misc\buffreminder.lua"/>
 	
 	<Script file="modules\panels\panels.lua"/>
 	
