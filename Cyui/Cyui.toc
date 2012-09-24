@@ -1,6 +1,6 @@
 ## Interface: 50001
 ## Author: Kryo
-## Version: 4.5
+## Version: 4.6
 ## Title: |cffDC143CCyui|r
 ## Notes: Needs original Tukui to run! Edited version of Tukui.
 ## RequiredDeps: CyUI_Config, Tukui
