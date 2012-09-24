@@ -468,6 +468,8 @@ ns.Filger_Spells = {
 			{spellID = 15487, size = iconsize, unitId = "target", caster = "all", filter = "DEBUFF"},
 			-- Mind Flay
 			{spellID = 15407, size = iconsize, unitId = "target", caster = "all", filter = "DEBUFF"},
+			-- Psychic Terror
+			{spellID = 113792, size = iconsize, unitId = "target", caster = "all", filter = "DEBUFF"},
 		},
 	},
 	["ROGUE"] = {
@@ -981,6 +983,8 @@ ns.Filger_Spells = {
 			{spellID = 15487, size = iconsize, unitId = "player", caster = "all", filter = "DEBUFF"},
 			-- Mind Flay
 			{spellID = 15407, size = iconsize, unitId = "player", caster = "all", filter = "DEBUFF"},
+			-- Psychic Terror
+			{spellID = 113792, size = iconsize, unitId = "player", caster = "all", filter = "DEBUFF"},
 			
 			-- Rogue
 			-- Dismantle
