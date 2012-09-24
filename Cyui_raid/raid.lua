@@ -6,7 +6,7 @@ C.unitframes.raidunitdebuffwatch = false
 
 local bgcolor, normTex, blank, uffont, font, fs, point, columnAnchorPoint, width, height, showParty, showRaid, showPlayer, xOffset, yOffset, columnSpacing, solo
 width = T.Scale(90*C["unitframes"].gridscale*T.raidscale)
-height = T.Scale(14*C["unitframes"].gridscale*T.raidscale)
+height = T.Scale(12*C["unitframes"].gridscale*T.raidscale)
 showParty = true
 showRaid = true
 showPlayer = C.unitframes.showplayerinparty
